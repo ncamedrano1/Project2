@@ -9,6 +9,9 @@ import { FlashcardsComponent } from './components/flashcards/flashcards.componen
 import { QuizzesComponent } from './components/quizzes/quizzes.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { PerformanceComponent } from './components/performance/performance.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { PerformanceComponent } from './components/performance/performance.compo
     FlashcardsComponent,
     QuizzesComponent,
     ResourcesComponent,
-    PerformanceComponent
+    PerformanceComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

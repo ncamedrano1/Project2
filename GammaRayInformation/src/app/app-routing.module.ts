@@ -5,6 +5,9 @@ import { FlashcardsComponent } from './components/flashcards/flashcards.componen
 import { PerformanceComponent } from './components/performance/performance.component';
 import { QuizzesComponent } from './components/quizzes/quizzes.component';
 import { ResourcesComponent } from './components/resources/resources.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -31,6 +34,17 @@ const routes: Routes = [
 {
   path: 'resources',
   component: ResourcesComponent
+},
+{
+  path: 'login',
+  component: LoginComponent,
+  children: [
+    { path: 'register', component: RegisterComponent}
+  ]
+},
+{
+  path: 'profile',
+  component: ProfileComponent
 }
 
 ];
