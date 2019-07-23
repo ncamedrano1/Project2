@@ -11,6 +11,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
+  /**
+   * Here are a collection of our created routes. It is important to note that for an empty
+   * direction, the HomeComponent is called.
+   */
 {
   path: 'home',
   component: HomeComponent
