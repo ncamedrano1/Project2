@@ -1,9 +1,14 @@
+<!--
+  Here Resides the HTML for our component for our log-in screen. In it one can find a simple form validator, used for the sake 
+  of logging in; however, we have added the functionality of a 'Register' button for those who do not have an account with us. 
+
+  The way this button works is by creating an event binder (click) and binding it to the function 'registerer'. In the corresponding
+  TypeScript the function is defined. 
+-->
 <body>
 
     <div class="container">
       <h2>Form Validation</h2>
-      <p>In this example, we use <code>.needs-validation</code>, which will add the validation effect AFTER the form has been submitting (if there's anything missing).</p>
-      <p>Try to submit this form before filling out the input fields, to see the effect.</p>
       <form action="/action_page.php" class="needs-validation" novalidate>
         <div class="form-group">
           <label for="uname">Username:</label>
