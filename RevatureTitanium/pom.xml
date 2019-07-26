@@ -15,6 +15,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RevatureTitanium</name>
 	<description>Revature Titanium Computer Science Study Application</description>
+	<packaging>war</packaging>
 
 	<!-- Java Version Configuration -->
 	<properties>
