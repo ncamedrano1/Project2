@@ -7,7 +7,7 @@
 DROP TABLE users_roles CASCADE CONSTRAINTS;
 CREATE TABLE users_roles (
     users_role_id NUMBER(6),
-    users_role VARCHAR2(50),
+    users_role VARCHAR2(50) UNIQUE NOT NULL,
     CONSTRAINT users_roles_pk PRIMARY KEY(users_role_id)
 );
 /
@@ -30,7 +30,7 @@ CREATE TABLE users_data (
     first_name VARCHAR2(100),
     last_name VARCHAR2(100),
     user_email VARCHAR2(100) UNIQUE NOT NULL,
-    user_role_id NUMBER(6),
+    user_role_id NUMBER(6) DEFAULT 2,
     CONSTRAINT users_data_pk PRIMARY KEY (user_id),
     
     CONSTRAINT users_roles_fk FOREIGN KEY (user_role_id) 
@@ -64,7 +64,7 @@ END;
 DROP TABLE subject_types CASCADE CONSTRAINTS;
 CREATE TABLE subject_types (
     subject_type_id NUMBER(6),
-    subject_type VARCHAR2(50),
+    subject_type VARCHAR2(50) UNIQUE NOT NULL,
     CONSTRAINT subject_type_pk PRIMARY KEY (subject_type_id)
 );
 /
@@ -81,6 +81,7 @@ INSERT INTO subject_types VALUES (6, 'Bootstrap');
 INSERT INTO subject_types VALUES (7, 'Angular');
 INSERT INTO subject_types VALUES (8, 'Testing');
 INSERT INTO subject_types VALUES (9, 'DevOps');
+INSERT INTO subject_types VALUES (10, 'Servlets');
 /
 
 /*
@@ -90,9 +91,10 @@ INSERT INTO subject_types VALUES (9, 'DevOps');
 DROP TABLE users_metrics CASCADE CONSTRAINTS;
 CREATE TABLE users_metrics (
     metrics_id NUMBER(6),
-    users_id NUMBER(6),
-    subject_id NUMBER(6),
-    user_performance NUMBER(6),
+    users_id NUMBER(6) NOT NULL,
+    subject_id NUMBER(6) NOT NULL,
+    user_performance NUMBER(6) NOT NULL,
+    test_date TIMESTAMP DEFAULT SYSDATE,
     CONSTRAINT users_metrics_pk PRIMARY KEY(metrics_id),
 
     CONSTRAINT metrics_users_fk FOREIGN KEY (users_id)
@@ -129,9 +131,9 @@ END;
 DROP TABLE subjects_questions CASCADE CONSTRAINTS;
 CREATE TABLE subjects_questions (
     question_id NUMBER(6),
-    subject_id NUMBER(6),
-    question VARCHAR2(500),
-    answer VARCHAR2(500),
+    subject_id NUMBER(6) NOT NULL,
+    question VARCHAR2(500) NOT NULL,
+    answer VARCHAR2(500) NOT NULL,
     red_herring_one VARCHAR2(500),
     red_herring_two VARCHAR2(500),
     red_herring_three VARCHAR2(500),
