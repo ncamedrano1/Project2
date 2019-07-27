@@ -1,6 +1,13 @@
 package com.revature.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class SubjectTypes {
+	@Id
+	@GeneratedValue
 	private Integer subject_type_id;
 	private String subject_type;
 
