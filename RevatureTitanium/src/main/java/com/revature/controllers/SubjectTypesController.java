@@ -10,7 +10,7 @@ import com.revature.models.SubjectTypes;
 import com.revature.repository.SubjectTypesRepository;
 
 @RestController
-@RequestMapping("/RevatureTitanium/subjects")
+@RequestMapping("/subjects")
 public class SubjectTypesController {
 	
 	@Autowired
