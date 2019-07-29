@@ -83,7 +83,7 @@ public class JdbcConfig implements DataSource {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("oracle.jdbc.OracleDriver");
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		dataSource.setUrl("jdbc:oracle:thin:@jhmydb.cguopvp0dama.us-east-2.rds.amazonaws.com:1521:orcl");
 		dataSource.setUsername("project2Manager");
 		dataSource.setPassword("p2Password");
