@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.titanium.configuration.JdbcConfig;
 import com.titanium.models.SubjectTypes;
+import com.titanium.models.SubjectTypesMapper;
 
 @Repository
 public class SubjectTypesRepositoryImpl implements SubjectTypesRepository {
@@ -29,10 +30,23 @@ public class SubjectTypesRepositoryImpl implements SubjectTypesRepository {
 		System.out.println("findAll inside :: " + this.getClass().getName());
 
 		String query = "SELECT * FROM subject_types";
-
 		List<SubjectTypes> result = jdbcTemplate.query(query,
 				(rs, rowNum) -> new SubjectTypes(rs.getInt(1), rs.getString(2)));
 		return result;
-
 	}
+
+	public SubjectTypes findOneSubjectById(Integer id) {
+		String query = "SELECT * FROM subject_types WHERE subject_type_id=?";
+		SubjectTypes subject = (SubjectTypes) jdbcTemplate.queryForObject(query, new Object[] { id },
+				new SubjectTypesMapper());
+		return subject;
+	}
+
+	// This will return a single String of the Subject Type, based on the ID given
+	public String findSubjectNameById(Integer id) {
+		String query = "SELECT subject_type FROM subject_types WHERE subject_type_id=?";
+		String subjectName = (String) jdbcTemplate.queryForObject(query, new Object[] { id }, String.class);
+		return subjectName;
+	}
+
 }

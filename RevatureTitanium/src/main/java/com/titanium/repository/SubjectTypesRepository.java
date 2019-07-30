@@ -11,4 +11,6 @@ public interface SubjectTypesRepository {
 
 	List<SubjectTypes> findAll();
 
+	public String findSubjectNameById(Integer id);
+
 }

@@ -27,4 +27,5 @@ public class SubjectTypesServiceImpl implements SubjectTypesService {
 		// WHY IS THIS NULL?
 		return subjectTypesRepository.findAll();
 	}
+
 }

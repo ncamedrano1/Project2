@@ -15,15 +15,16 @@ import com.titanium.services.SubjectTypesServiceImpl;
 @Controller("subjectTypesController")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/subjects")
-public class SubjectTypesControllerImpl {
+public class SubjectQuestionsControllerImpl {
 
-	@Autowired
-	private SubjectTypesService subjectTypesService = new SubjectTypesServiceImpl();
+//	@Autowired
+//	private SubjectTypesService subjectTypesService = new SubjectTypesServiceImpl();
 
-	@RequestMapping("/all")
-	public @ResponseBody List<SubjectTypes> getAllSubjects() {
-		System.out.println("reached subject controller find all method");
-		System.out.println(subjectTypesService.findAll());
-		return subjectTypesService.findAll();
-	}
+//	@RequestMapping("/all")
+//	public @ResponseBody List<SubjectTypes> getAllQuestions() {
+//		System.out.println("reached subject controller find all method");
+//		System.out.println(subjectTypesService.findAll());
+//		return subjectTypesService.findAll();
+//	}
+
 }
