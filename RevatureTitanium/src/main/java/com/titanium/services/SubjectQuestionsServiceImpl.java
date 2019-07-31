@@ -5,9 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.titanium.models.SubjectFlashCards;
 import com.titanium.models.SubjectQuestions;
+import com.titanium.repository.SubjectFlashCardsRepository;
+import com.titanium.repository.SubjectFlashCardsRepositoryImpl;
 import com.titanium.repository.SubjectQuestionsRepository;
 import com.titanium.repository.SubjectQuestionsRepositoryImpl;
+import com.titanium.repository.SubjectTypesRepositoryImpl;
 
 @Service
 public class SubjectQuestionsServiceImpl {
@@ -15,39 +19,53 @@ public class SubjectQuestionsServiceImpl {
 	@Autowired
 	private SubjectQuestionsRepository subjectQuestionsRepository = new SubjectQuestionsRepositoryImpl();
 
+	@Autowired
+	private SubjectFlashCardsRepository subjectFlashCardsRepository = new SubjectFlashCardsRepositoryImpl();
+
 	public SubjectQuestionsServiceImpl() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public List<SubjectQuestions> findAll() {
+	// Find All questions with their answers & red herrings
+	public List<SubjectQuestions> findAllQuestions() {
 		return subjectQuestionsRepository.findAll();
 	}
 
-	public List<SubjectQuestions> findAllBySubject(Integer id) {
+	// Use Id to Find all questions from a subject
+	public List<SubjectQuestions> findAllQuestionsBySubject(Integer id) {
 		return subjectQuestionsRepository.findAllBySubject(id);
 	}
 
-	public List<SubjectQuestions> findAllBySubject(String subject) {
-
-//		return subjectQuestionsRepository.findAllBySubject(subject);
-		return null;
+	// Use String to Find all questions from a subject
+	public List<SubjectQuestions> findAllQuestionsBySubject(String subject) {
+		Integer id = new SubjectTypesRepositoryImpl().findSubjectIdByName(subject);
+		return subjectQuestionsRepository.findAllBySubject(id);
 	}
 
-	public List<SubjectQuestions> findAllQuestionsAndAnswers() {
-		// Return just Questions and Answers?
-		return null;
+	// Use Id to find a single question
+	public SubjectQuestions findQuestion(Integer id) {
+		return subjectQuestionsRepository.findQuestionById(id);
 	}
 
-	public List<SubjectQuestions> findAllQuestionsAndAnswersBySubject() {
-		// Return just Questions and Answers by SubjectType
-		return null;
+	// Find All questions and return only questions and answers
+	public List<SubjectFlashCards> findAllFlashCards() {
+		return subjectFlashCardsRepository.findAll();
 	}
-	
-	/*
-	 * NEED:
-	 * GRADE QUIZ:
-	 * *Temporary Map of Quiz questions, red herrings & answer to view on frontend
-	 * 
-	 */
+
+	// Use Id to Find all flash cards from a subject
+	public List<SubjectFlashCards> findAllFlashCardsBySubject(Integer id) {
+		return subjectFlashCardsRepository.findAllBySubject(id);
+	}
+
+	// Use String to final all flash cards from a subject
+	public List<SubjectFlashCards> findAllFlashCardsBySubject(String subject) {
+		Integer id = new SubjectTypesRepositoryImpl().findSubjectIdByName(subject);
+		return subjectFlashCardsRepository.findAllBySubject(id);
+	}
+
+	// Find a single flash card with Id
+	public SubjectFlashCards findFlashCard(Integer id) {
+		return subjectFlashCardsRepository.findFlashCardById(id);
+	}
 }

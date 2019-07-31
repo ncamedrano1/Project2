@@ -81,6 +81,8 @@ public class JdbcConfig implements DataSource {
 	}
 
 	@Bean
+	// Used to pass credentials to 'DataSource', which will be used to access
+	// Joseph's RDS
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");

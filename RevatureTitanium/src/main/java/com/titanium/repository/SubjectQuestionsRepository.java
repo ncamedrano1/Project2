@@ -8,6 +8,8 @@ public interface SubjectQuestionsRepository {
 
 	List<SubjectQuestions> findAll();
 
+	public SubjectQuestions findQuestionById(Integer id);
+
 	List<SubjectQuestions> findAllBySubject(Integer id);
 
 }

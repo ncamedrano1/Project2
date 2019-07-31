@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 
 import com.titanium.configuration.JdbcConfig;
 import com.titanium.models.SubjectQuestions;
+import com.titanium.models.SubjectQuestionsMapper;
 
 @Repository
 public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepository {
@@ -24,6 +25,7 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
+	// Find all Questions
 	@Override
 	public List<SubjectQuestions> findAll() {
 		System.out.println("findAll inside :: " + this.getClass().getName());
@@ -37,6 +39,15 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 		return result;
 	}
 
+	// Find a single question from a specific subject
+	public SubjectQuestions findQuestionById(Integer id) {
+		String query = "SELECT * FROM subject_questions WHERE question_id=?";
+		SubjectQuestions question = (SubjectQuestions) jdbcTemplate.queryForObject(query, new Object[] { id },
+				new SubjectQuestionsMapper());
+		return question;
+	}
+
+	// Find all Questions of from a specific Subject
 	@Override
 	public List<SubjectQuestions> findAllBySubject(Integer id) {
 		System.out.println("findAllBySubject inside :: " + this.getClass().getName());
@@ -49,5 +60,4 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 						rs.getString(10)));
 		return result;
 	}
-
 }

@@ -15,6 +15,11 @@ public class SubjectQuestions {
 	private String red_herring_five;
 	private String red_herring_six;
 
+	/*
+	 * WITHIN THIS CLASS >> ADD A "RETURN RANDOM QUESTIONS" METHOD THAT WILL RETURN
+	 * A LIST OF 4 OF THE RED HERRINGS?
+	 */
+
 	public SubjectQuestions() {
 		super();
 		// TODO Auto-generated constructor stub
