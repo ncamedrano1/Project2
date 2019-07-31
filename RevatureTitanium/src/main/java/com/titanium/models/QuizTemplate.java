@@ -5,8 +5,9 @@ import java.util.List;
 
 public class QuizTemplate {
 
-	List<String[]> quiz;
-	public static List<Integer> answers;
+	private List<String[]> quiz;
+	
+	private static List<Integer> answers;
 
 	public List<String[]> randomizeQuiz(Integer quizSize, List<SubjectQuestions> allQuestions) {
 		// This is what will be returned to FrontEnd

@@ -5,26 +5,35 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.titanium.models.SubjectTypes;
-import com.titanium.services.SubjectTypesService;
-import com.titanium.services.SubjectTypesServiceImpl;
+import com.titanium.models.SubjectFlashCards;
+import com.titanium.models.SubjectQuestions;
+import com.titanium.services.SubjectQuestionsService;
+import com.titanium.services.SubjectQuestionsServiceImpl;
 
-@Controller("subjectTypesController")
+@Controller("subjectquestionscontroller")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/subjects")
+@RequestMapping("/questions")
 public class SubjectQuestionsControllerImpl {
 
-//	@Autowired
-//	private SubjectTypesService subjectTypesService = new SubjectTypesServiceImpl();
+	@Autowired
+	private SubjectQuestionsService subjectQuestionsService = new SubjectQuestionsServiceImpl();
 
-//	@RequestMapping("/all")
-//	public @ResponseBody List<SubjectTypes> getAllQuestions() {
-//		System.out.println("reached subject controller find all method");
-//		System.out.println(subjectTypesService.findAll());
-//		return subjectTypesService.findAll();
-//	}
+	@RequestMapping("/allQuestions")
+	public @ResponseBody List<SubjectQuestions> getAllQuestions() {
+		return subjectQuestionsService.findAllQuestions();
+	}
 
+	@RequestMapping("/allFlashCards")
+	public @ResponseBody List<SubjectFlashCards> getAllFlashCards() {
+		return subjectQuestionsService.findAllFlashCards();
+	}
+
+	@RequestMapping("/allFlashCards-{subject}")
+	public @ResponseBody List<SubjectFlashCards> getAllFlashCardsBySubject(@PathVariable String subject) {
+		return subjectQuestionsService.findAllFlashCardsBySubject(subject);
+	}
 }

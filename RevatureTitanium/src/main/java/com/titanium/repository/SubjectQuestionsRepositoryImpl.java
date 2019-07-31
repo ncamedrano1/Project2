@@ -1,6 +1,8 @@
 package com.titanium.repository;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
@@ -31,17 +33,29 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 		System.out.println("findAll inside :: " + this.getClass().getName());
 
 		String query = "SELECT * FROM subjects_questions";
+		List<SubjectQuestions> result = new ArrayList<SubjectQuestions>();
+		List<Map<String, Object>> rows = jdbcTemplate.queryForList(query);
+		for (Map row : rows) {
+			SubjectQuestions question = new SubjectQuestions();
+			question.setQuestion_id((Integer) row.get("question_id"));
+			question.setSubject_id((Integer) row.get("subject_id"));
+			question.setQuestion((String) row.get("question"));
+			question.setAnswer((String) row.get("answer"));
+			question.setRed_herring_one((String) row.get("red_herring_one"));
+			question.setRed_herring_two((String) row.get("red_herring_two"));
+			question.setRed_herring_three((String) row.get("red_herring_three"));
+			question.setRed_herring_four((String) row.get("red_herring_four"));
+			question.setRed_herring_five((String) row.get("red_herring_five"));
+			question.setRed_herring_six((String) row.get("red_herring_six"));
 
-		List<SubjectQuestions> result = jdbcTemplate.query(query,
-				(rs, rowNum) -> new SubjectQuestions(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),
-						rs.getString(10)));
+			result.add(question);
+		}
 		return result;
 	}
 
 	// Find a single question from a specific subject
 	public SubjectQuestions findQuestionById(Integer id) {
-		String query = "SELECT * FROM subject_questions WHERE question_id=?";
+		String query = "SELECT * FROM subjects_questions WHERE question_id=?";
 		SubjectQuestions question = (SubjectQuestions) jdbcTemplate.queryForObject(query, new Object[] { id },
 				new SubjectQuestionsMapper());
 		return question;
@@ -54,10 +68,23 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 
 		String query = "SELECT * FROM subjects_questions WHERE subject_id=" + id;
 
-		List<SubjectQuestions> result = jdbcTemplate.query(query,
-				(rs, rowNum) -> new SubjectQuestions(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9),
-						rs.getString(10)));
+		List<SubjectQuestions> result = new ArrayList<SubjectQuestions>();
+		List<Map<String, Object>> rows = jdbcTemplate.queryForList(query);
+		for (Map row : rows) {
+			SubjectQuestions question = new SubjectQuestions();
+			question.setQuestion_id((Integer) row.get("question_id"));
+			question.setSubject_id((Integer) row.get("subject_id"));
+			question.setQuestion((String) row.get("question"));
+			question.setAnswer((String) row.get("answer"));
+			question.setRed_herring_one((String) row.get("red_herring_one"));
+			question.setRed_herring_two((String) row.get("red_herring_two"));
+			question.setRed_herring_three((String) row.get("red_herring_three"));
+			question.setRed_herring_four((String) row.get("red_herring_four"));
+			question.setRed_herring_five((String) row.get("red_herring_five"));
+			question.setRed_herring_six((String) row.get("red_herring_six"));
+
+			result.add(question);
+		}
 		return result;
 	}
 }
