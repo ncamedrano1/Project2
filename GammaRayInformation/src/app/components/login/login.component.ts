@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -7,13 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  username;
+  pwd;
   constructor(
     /**
      * Router object created for use below.
      */
-
-    private router: Router
+    private http:HttpClient, private router:Router
+    
   ) { }
 
   ngOnInit() {
@@ -27,5 +29,15 @@ export class LoginComponent implements OnInit {
   registerer(){
     this.router.navigate(["register"])
   }
+
+  giveData(){
+    this.http.post<boolean>("http://3.16.111.130:8085/RevatureTitanium/",
+    {username: this.username, password: this.pwd}).subscribe(response =>{
+      if(response){
+        this.router.navigate(["profile"])
+      }
+    })
+  }
+
 
 }
