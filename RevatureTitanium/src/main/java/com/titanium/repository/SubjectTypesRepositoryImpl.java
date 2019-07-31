@@ -49,4 +49,10 @@ public class SubjectTypesRepositoryImpl implements SubjectTypesRepository {
 		return subjectName;
 	}
 
+	public Integer findSubjectIdByName(String subject) {
+		String query = "SELECT subject_type_id FROM subject_types WHERE LOWER(subject_type)=?";
+		Integer subjectId = Integer
+				.parseInt(jdbcTemplate.queryForObject(query, new Object[] { subject.toLowerCase() }, String.class));
+		return subjectId;
+	}
 }

@@ -11,6 +11,10 @@ public interface SubjectTypesRepository {
 
 	List<SubjectTypes> findAll();
 
+	public SubjectTypes findOneSubjectById(Integer id);
+
 	public String findSubjectNameById(Integer id);
+
+	public Integer findSubjectIdByName(String subject);
 
 }
