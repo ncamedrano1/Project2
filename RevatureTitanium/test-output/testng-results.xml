@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2077" started-at="2019-07-31T04:23:54Z" finished-at="2019-07-31T04:23:56Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2077" started-at="2019-07-31T04:23:54Z" finished-at="2019-07-31T04:23:56Z">
+      <class name="com.revature.test.backend.BackTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.revature.test.backend.BackTest@464bee09]" name="setup" is-config="true" duration-ms="207" started-at="2019-07-31T04:23:54Z" finished-at="2019-07-31T04:23:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="findAll()[pri:0, instance:com.revature.test.backend.BackTest@464bee09]" name="findAll" duration-ms="1469" started-at="2019-07-31T04:23:55Z" finished-at="2019-07-31T04:23:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findAll -->
+        <test-method status="PASS" signature="afterAll()[pri:0, instance:com.revature.test.backend.BackTest@464bee09]" name="afterAll" is-config="true" duration-ms="377" started-at="2019-07-31T04:23:56Z" finished-at="2019-07-31T04:23:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterAll -->
+      </class> <!-- com.revature.test.backend.BackTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
