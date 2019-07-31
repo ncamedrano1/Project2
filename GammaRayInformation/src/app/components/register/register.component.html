@@ -1,32 +1,38 @@
-<div class="row">
-    
-    <div class="col-md-6" ><br>
-        
-        <h2 class="text-align-center">Registration</h2><br>
-        <div class="form-group">
-            <label for="fname">First Name:</label>
-            <input type="text" class="form-control" id="fname" name="fname" [(ngModel)]="fname" required>
-        </div><br>
-        <div class="form-group">
-            <label for="lname">Last Name:</label>
-            <input type="text" class="form-control" id="lname" name="lname" [(ngModel)]="lname">
-        </div><br>
-        <div class="form-group">
-            <label for="usr">Username:</label>
-            <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username">
-        </div><br>
-        <div class="form-group">
-            <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" name="pwd" [(ngModel)]="pwd">
-        </div><br>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
-        </div><br>
-        <div class="container">
-            <button type="button" class="btn btn-primary btn-block" valeu="SUBMIT" (click)='giveData()'>Submit</button>
-            <br><br>
+<body>
+    <div class="row">
+
+        <div class="col-md-6"><br>
+
+            <h2 class="text-align-center">Registration</h2><br>
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" class="form-control" id="fname" name="fname" [(ngModel)]="fname" required>
+            </div><br>
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" class="form-control" id="lname" name="lname" [(ngModel)]="lname">
+            </div><br>
+            <div class="form-group">
+                <label for="usr">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username">
+            </div><br>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" name="pwd" [(ngModel)]="pwd">
+            </div><br>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+            </div><br>
+            <div class="container">
+                <button type="button" class="btn btn-primary btn-block" valeu="SUBMIT"
+                    (click)='giveData()'>Submit</button>
+                <br><br>
+            </div>
+
         </div>
-    
     </div>
-</div>
+</body>
+<footer class="container-fluid text-center bg-dark" style="color: lightgray">
+    <p>&copy; 2019 Gamma Ray Information</p>
+</footer>

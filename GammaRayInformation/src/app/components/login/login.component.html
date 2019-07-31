@@ -8,52 +8,53 @@
 
 <body>
 
-    <div class="container">
+  <div class="row py-5 px-4">
+    <div class="col-xl-4 col-md-6 col-sm-10 mx-auto">
       <h2>Login</h2>
-      
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" class="form-control col-sm-4" id="username" placeholder="username" [(ngModel)]="username">
-          <div class="valid-feedback">Valid.</div>
-          <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control col-sm-4" id="pwd" placeholder="password" [(ngModel)]="pwd" required>
-          <div class="valid-feedback">Valid.</div>
-          <div class="invalid-feedback">Please fill out this field.</div>
-        </div>
-        <div class="btn-toolbar">
-          <button type="submit" class="btn btn-primary" (click)='giveData()'>Submit</button>
-          <button type="button" class="btn btn-primary mx-4" (click)="registerer()">Register</button><!--Added -->
-        </div>
-     
-    </div>
-    
-    <script>
-    // Disable form submissions if there are invalid fields
-    (function() {
-      'use strict';
-      window.addEventListener('load', function() {
-        // Get the forms we want to add validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function(form) {
-          form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-              event.preventDefault();
-              event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-          }, false);
-        });
-      }, false);
-    })();
-    </script>
 
-      
-      
-     
-    
-    </body>
-  
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control col-sm-4" id="username" placeholder="username" [(ngModel)]="username">
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control col-sm-4" id="pwd" placeholder="password" [(ngModel)]="pwd" required>
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="btn-toolbar">
+        <button type="submit" class="btn btn-primary" (click)='giveData()'>Submit</button>
+        <button type="button" class="btn btn-primary mx-4" (click)="registerer()">Register</button>
+        <!--Added -->
+      </div>
+
+    </div>
+  </div>
+
+</body>
+<footer class="container-fluid text-center bg-dark" style="color: lightgray">
+  <p>&copy; 2019 Gamma Ray Information</p>
+</footer>
+
+<script>
+  // Disable form submissions if there are invalid fields
+  (function () {
+    'use strict';
+    window.addEventListener('load', function () {
+      // Get the forms we want to add validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function (form) {
+        form.addEventListener('submit', function (event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+</script>
