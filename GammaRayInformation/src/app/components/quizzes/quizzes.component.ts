@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-quizzes',
@@ -8,12 +9,15 @@ import { Router } from '@angular/router';
 })
 export class QuizzesComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public quizService: QuizService) { }
 
   ngOnInit() {
   }
 
-  quizzer(){
-    this.router.navigate(["quiz"])
+  quizzer(id){
+    this.router.navigate(["quiz" + id])
+    console.log(id)
+
+
   }
 }
