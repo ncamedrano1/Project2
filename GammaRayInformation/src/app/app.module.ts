@@ -14,6 +14,8 @@ import { PerformanceComponent } from './components/performance/performance.compo
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { QuizComponent } from './components/quiz/quiz.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     PerformanceComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
