@@ -25,6 +25,14 @@ import { Quiz5Component } from './components/quiz5/quiz5.component';
 import { Quiz6Component } from './components/quiz6/quiz6.component';
 import { Quiz7Component } from './components/quiz7/quiz7.component';
 import { Quiz8Component } from './components/quiz8/quiz8.component';
+import { Flashcard1Component } from './components/flashcardsPages/flashcard1/flashcard1.component';
+import { Flashcards2Component } from './componenets/flashcardsPages/flashcards2/flashcards2.component';
+import { Flashcards3Component } from './components/flashcardsPages/flashcards3/flashcards3.component';
+import { Flashcards4Component } from './components/flashcardsPages/flashcards4/flashcards4.component';
+import { Flashcards5Component } from './components/flashcardsPages/flashcards5/flashcards5.component';
+import { Flashcards6Component } from './components/flashcardsPages/flashcards6/flashcards6.component';
+import { Flashcards7Component } from './components/flashcardsPages/flashcards7/flashcards7.component';
+import { Flashcards8Component } from './components/flashcardsPages/flashcards8/flashcards8.component';
 
 
 @NgModule({
@@ -46,7 +54,15 @@ import { Quiz8Component } from './components/quiz8/quiz8.component';
     Quiz5Component,
     Quiz6Component,
     Quiz7Component,
-    Quiz8Component
+    Quiz8Component,
+    Flashcard1Component,
+    Flashcards2Component,
+    Flashcards3Component,
+    Flashcards4Component,
+    Flashcards5Component,
+    Flashcards6Component,
+    Flashcards7Component,
+    Flashcards8Component
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
