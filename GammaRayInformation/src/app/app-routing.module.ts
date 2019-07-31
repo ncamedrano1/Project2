@@ -8,7 +8,14 @@ import { ResourcesComponent } from './components/resources/resources.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { QuizComponent } from './components/quiz/quiz.component';
+import { Quiz1Component } from './components/quiz1/quiz1.component';
+import { Quiz2Component } from './components/quiz2/quiz2.component';
+import { Quiz3Component } from './components/quiz3/quiz3.component';
+import { Quiz4Component } from './components/quiz4/quiz4.component';
+import { Quiz5Component } from './components/quiz5/quiz5.component';
+import { Quiz6Component } from './components/quiz6/quiz6.component';
+import { Quiz7Component } from './components/quiz7/quiz7.component';
+import { Quiz8Component } from './components/quiz8/quiz8.component';
 
 
 const routes: Routes = [
@@ -54,8 +61,36 @@ component: RegisterComponent
   component: ProfileComponent
 },
 {
-  path: 'quiz',
-  component: QuizComponent
+  path: 'quiz1',
+  component: Quiz1Component
+},
+{
+  path: 'quiz2',
+  component: Quiz2Component
+},
+{
+  path: 'quiz3',
+  component: Quiz3Component
+},
+{
+  path: 'quiz4',
+  component: Quiz4Component
+},
+{
+  path: 'quiz5',
+  component: Quiz5Component
+},
+{
+  path: 'quiz6',
+  component: Quiz6Component
+},
+{
+  path: 'quiz7',
+  component: Quiz7Component
+},
+{
+  path: 'quiz8',
+  component:  Quiz8Component
 }
 ];
 
