@@ -1,15 +1,18 @@
+<head>
+  <script type="text/javascript" src="canvasjs.min.js"></script>
+</head>
+
 <body>
 
-  <div class="container">
-    <h2 style="text-align: center">Revature Ti Performance Statistics</h2>
-    <p style="text-align: center">Your perfomance table:</p>
+  <div class="container"><br>
+    <h2 style="text-align: center">Performance Statistics</h2><br>
     <!--<p>The .table-hover class adds a hover effect (grey background color) on table rows:</p>  -->
     <table class="table table-dark table-hover">
       <thead>
         <tr>
           <th>Quiz Topics</th>
-          <th>Last Taken</th>
-          <th>Average Grade</th>
+          <th>Previous Attempt</th>
+          <th>Average</th>
         </tr>
       </thead>
       <tbody>
@@ -60,6 +63,11 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </div><br><br>
+
+  <div class="container">
+  <div id="chartContainer" style="height: 370px; width: 100%; 
+  margin-left:auto; margin-right: auto;"></div>
+  </div><br><br><br><br>
 
 </body>
