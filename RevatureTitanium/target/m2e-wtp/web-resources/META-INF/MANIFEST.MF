@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: JosephFullSail Mac
+=======
+Built-By: Tomas Luna
+>>>>>>> 7563bf4b7a6d3edf436da404f355a7f9facd81cb
 Build-Jdk: 1.8.0_212
 Created-By: Maven Integration for Eclipse
 
