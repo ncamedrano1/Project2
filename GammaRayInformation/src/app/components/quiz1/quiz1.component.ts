@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { QuizService } from 'src/app/services/quiz.service';
+import { FormGroup, NgModel, FormBuilder} from '@angular/forms';
 /**
  * Here is where the magic happens, the quiz creators
  */
@@ -12,6 +13,7 @@ import { QuizService } from 'src/app/services/quiz.service';
   styleUrls: ['./quiz1.component.css']
 })
 export class Quiz1Component implements OnInit {
+  form: FormGroup
   currentQuestionNumber: number;
   start: boolean = false;
   questionNumber: number;
@@ -27,7 +29,11 @@ export class Quiz1Component implements OnInit {
 
 
 
-  constructor(private router: Router, private quizService: QuizService) { }
+  constructor(private router: Router, private quizService: QuizService, public fb:FormBuilder) { }
+
+  registrationForm = this.fb.group({
+    choice1:''
+  })
 
   ngOnInit() {
     this.quizService.seconds = 0;
@@ -61,7 +67,6 @@ export class Quiz1Component implements OnInit {
       this.quizService.qns[this.questionNumber-1]['red_herring_four']
      ]
     this.choices = this.shuffle(this.choices)
-    console.log(this.choices);
     this.choice1 = this.choices[0]
     this.choice2 = this.choices[1]
     this.choice3 = this.choices[2]
@@ -72,11 +77,15 @@ export class Quiz1Component implements OnInit {
   }
 
   next() {
+    
+    console.log(document.getElementById("choice1"))
     if (this.questionNumber > 0 && this.questionNumber < this.quizService.qns.length) {
       this.questionNumber++
     } else {
       this.questionNumber = this.questionNumber
     }
+
+    
     
 
   }
@@ -115,8 +124,8 @@ export class Quiz1Component implements OnInit {
     return array;
   }
 
-  toggleVisibility(){
-
+  submission(){
+    console.log(document.getElementById("choice1").getAttribute("checked"))
   }
 
 

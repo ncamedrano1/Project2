@@ -3,15 +3,15 @@
 <div *ngIf="start">
     <div>
         <h2>Question {{questionNumber}}</h2>
-        <form action="">
+        <form [formGroup]="registrationForm" (ngSubmit)="submission()">
             <h3>{{question}}</h3>
-            <input type="checkbox" class="checkbox" id="choice1" name="choice1" value="choice1">{{choice1}}<br>
+            <input type="checkbox" class="checkbox" id="choice1" formControlName="choice1" name="choice1" value="choice1" ngModel>{{choice1}}<br>
             <input type="checkbox" class="checkbox" id="choice2" name="choice2" value="choice2">{{choice2}}<br>
             <input type="checkbox" class="checkbox" id="choice3" name="choice3" value="choice3">{{choice3}}<br>
             <input type="checkbox" class="checkbox" id="choice4" name="choice4" value="choice4">{{choice4}}<br>
             <input type="checkbox" class="checkbox" id="choice5" name="choice5" value="choice5">{{choice5}}<br>
 
-            <button type="submit" class="btn btn-primary" (click)='previous();takeQuiz()'>Previous</button>
+            <button class="btn btn-primary" (click)='previous();takeQuiz()'>Previous</button>
             <button type="submit" class="btn btn-primary" (click)='next();takeQuiz()'>Next</button>
 
 
