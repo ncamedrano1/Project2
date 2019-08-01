@@ -1,47 +1,43 @@
-<button id="startButton" name="startButton" (click)="takeQuiz()" [hidden]="start">Begin Servlets Quiz</button>
-<div *ngIf="start">
-    <div>
-        <h2>Question {{questionNumber}}</h2>
-        <form>
-            <div>
-                <h3>{{question}}</h3>
+<div class="col-xl-8">
+    <br><button id="startButton" name="startButton" (click)="takeQuiz()" [hidden]="start">Begin Servlets Quiz</button>
+    <div *ngIf="start">
+        <div><br>
+            <h2>Question {{questionNumber}}:</h2>
+            <form>
                 <div>
-                    <button class="checkbox" id=1 name="choice1"
-                        (click)="checker1()">{{choice1}}</button><br>
-                </div>
-                <div>
-                    <button class="checkbox" id=2 name="choice2"
-                    (click)="checker2()">{{choice2}}</button><br>
-                </div>
-                <div>
-                    <button class="checkbox" id=3 name="choice3"
-                    (click)="checker3()">{{choice3}}</button><br>
-                </div>
-                <div>
-                    <button class="checkbox" id=4 name="choice4"
-                    (click)="checker4()">{{choice4}}</button><br>
-                </div>
-                <div>
-                    <button class="checkbox" id=5 name="choice5"
-                    (click)="checker5()">{{choice5}}</button><br>
-                </div>
-                <button class="btn btn-primary" (click)='previous();takeQuiz()'>Previous</button>
-                <button class="btn btn-primary" (click)='next();takeQuiz()'>Next</button>
-                <!-- <button type="submit">Submit</button> -->
+                    <h3>{{question}}</h3><br>
+                    <div>
+                        <button class="checkbox" id=1 name="choice1" (click)="checker1()">{{choice1}}</button><br>
+                    </div>
+                    <div>
+                        <button class="checkbox" id=2 name="choice2" (click)="checker2()">{{choice2}}</button><br>
+                    </div>
+                    <div>
+                        <button class="checkbox" id=3 name="choice3" (click)="checker3()">{{choice3}}</button><br>
+                    </div>
+                    <div>
+                        <button class="checkbox" id=4 name="choice4" (click)="checker4()">{{choice4}}</button><br>
+                    </div>
+                    <div>
+                        <button class="checkbox" id=5 name="choice5" (click)="checker5()">{{choice5}}</button><br>
+                    </div><br>
+                    <button class="btn btn-primary" (click)='previous();takeQuiz()'>Previous</button>
+                    <button class="btn btn-primary" (click)='next();takeQuiz()'>Next</button>
+                    <!-- <button type="submit">Submit</button> -->
 
-            </div>
-        </form>
+                </div>
+            </form>
 
 
+
+        </div>
 
     </div>
 
+    <div *ngIf="wrong">
+        <h1>Incorrect!</h1>
+    </div>
+    <div *ngIf="correct">
+        <h1>Correct!</h1>
+    </div>
 </div>
-
-<div *ngIf="wrong">
-    <h1>Incorrect!</h1>
-</div>
-<div *ngIf="correct">
-    <h1>Correct!</h1>
-</div>
-
