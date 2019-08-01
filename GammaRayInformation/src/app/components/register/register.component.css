@@ -1,0 +1,11 @@
+button{
+    background-color: darkorchid;
+    border-color: black;
+    color: lightgray;
+}
+
+button:hover{
+    background: black;
+    border-color: darkorchid;
+    color: darkorchid;
+}

@@ -1,0 +1,28 @@
+<p>Note: only pick one answer!!!!!!</p>
+<button id="startButton" name="startButton" (click)="beginQuiz()">Begin Front-End Technologies Quiz</button>
+<div *ngIf="start">
+    <div>
+        <span>Time Elapsed: {{quizService.displayTimeElapsed()}}</span>
+        <div class="progress">
+            <div class="determinate" [style.width.%]="(quizService.qnProgress + 1)*10"></div>
+        </div>
+        <h2>Question {{currentQuestionNumber}}</h2>
+        <form action="">
+            <h3>Insert Question Here {{question}}</h3>
+            <input type="checkbox" id="choice1" name="choice1" value="choice1"> Choice 1<br>
+            <input type="checkbox" id="choice2" name="choice2" value="choice2"> Choice 2<br>
+            <input type="checkbox" id="choice3" name="choice3" value="choice3"> Choice 3<br>
+            <input type="checkbox" id="choice4" name="choice4" value="choice4"> Choice 4<br>
+            <input type="checkbox" id="choice5" name="choice5" value="choice5"> Choice 5<br>
+
+            <button type="submit" class="btn btn-primary">Previous</button>
+            <button type="submit" class="btn btn-primary">Next</button>
+
+
+        </form>
+
+
+
+    </div>
+
+</div>

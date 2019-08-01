@@ -1,3 +1,15 @@
+button{
+    background-color: darkorchid;
+    border-color: black;
+    color: lightgray;
+}
+
+button:hover{
+    background: black;
+    border-color: darkorchid;
+    color: darkorchid;
+}
+
 .tp-wrapper{
     -webkit-perspective: 800px;
     perspective: 800px;
