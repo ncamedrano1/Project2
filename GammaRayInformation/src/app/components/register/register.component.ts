@@ -79,6 +79,7 @@ export class RegisterComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
+        console.log(this.registerForm.value)
 
         // reset alerts on submit
         this.alertService.clear();
@@ -90,7 +91,6 @@ export class RegisterComponent implements OnInit {
 
         this.loading = true;
         this.accountService.register(this.registerForm.value)
-            .pipe(first())
             .subscribe(
                 data => {
                     this.alertService.success('Registration successful', true);
