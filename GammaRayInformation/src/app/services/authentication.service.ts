@@ -19,7 +19,7 @@ export class AuthenticationService {
   public currentAccount: Observable<Account>;
 
   constructor(private http: HttpClient) {
-    this.currentAccountSubject = new BehaviorSubject<Account>(JSON.parse(storage.getItem('currentAccount')));
+    this.currentAccountSubject = new BehaviorSubject<Account>(JSON.parse(localStorage.getItem('currentAccount')));
     this.currentAccount = this.currentAccountSubject.asObservable();
    }
 
@@ -28,10 +28,10 @@ export class AuthenticationService {
    }
 
    login(username, password) {
-     return this.http.post<any>(`${config.apiUrl}/users/authenticate`, { username, password })
-      .pipe(map(user => {
+     return this.http.post<any>("http://3.16.111.130:8085/RevatureTitanium/users/authenticate", { username, password })
+      .pipe(map(account => {
         //store user details and jwt token in storage to keep user logged in btw page refreshes
-        Storage.setItem(`currentAccount`, JSON.stringify(account));
+        localStorage.setItem(`currentAccount`, JSON.stringify(account));
         this.currentAccountSubject.next(account);
         return account;
       }));
@@ -40,7 +40,7 @@ export class AuthenticationService {
 
    logout() {
      //remove user from local storage and set current user to null
-     Storage.removeItem('currentAccount');
+     localStorage.removeItem('currentAccount');
      this.currentAccountSubject.next(null);
    }
 

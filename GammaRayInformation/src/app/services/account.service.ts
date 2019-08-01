@@ -15,15 +15,15 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<Account[]>(`${config.apiUrl}/users`);
+    return this.http.get<Account[]>("http://3.16.111.130:8085/RevatureTitanium/users");
   }
 
   register(account: Account) {
-    return this.post(`${config.apiUrl}/users/register`, account);
+    return this.http.post("http://3.16.111.130:8085/RevatureTitanium/users/register", account);
   }
 
   delete(id: number) {
-    return this.http.delete(`${config.apiUrl}/users/${id}`);
+    return this.http.delete("http://3.16.111.130:8085/RevatureTitanium/users/${id}");
   }
 
 }
