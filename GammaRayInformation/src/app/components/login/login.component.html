@@ -4,7 +4,7 @@
 
   The way this button works is by creating an event binder (click) and binding it to the function 'registerer'. In the corresponding
   TypeScript the function is defined. 
--->
+
 
 <body>
 
@@ -27,7 +27,7 @@
       <div class="btn-toolbar">
         <button type="submit" class="btn btn-primary" (click)='giveData()'>Submit</button>
         <button type="button" class="btn btn-primary mx-4" (click)="registerer()">Register</button>
-        <!--Added -->
+        <!--Added 
       </div>
 
     </div>
@@ -55,4 +55,40 @@
       });
     }, false);
   })();
-</script>
+</script> -->
+
+<body><br><br>
+  <h2 style="text-align: center">Login</h2>
+  <div class="col-xl-4 mx-auto">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="hover-item">
+          <button type="submit" class="btn btn-primary"
+            style="background-color: darkorchid; border-color: black; color: lightgray"
+            onmouseover="this.style.backgroundColor='black';this.style.borderColor='darkorchid';this.style.color='darkorchid';"
+            onmouseout="this.style.backgroundColor='darkorchid';this.style.borderColor='black';this.style.color='lightgray';">Submit</button>
+          <button type="button" class="btn btn-primary mx-4" routerLink="/register"
+            style="background-color: darkorchid; border-color: black; color: lightgray"
+            onmouseover="this.style.backgroundColor='black';this.style.borderColor='darkorchid';this.style.color='darkorchid';"
+            onmouseout="this.style.backgroundColor='darkorchid';this.style.borderColor='black';this.style.color='lightgray';">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
