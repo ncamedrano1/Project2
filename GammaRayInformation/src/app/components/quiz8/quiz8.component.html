@@ -1,29 +1,47 @@
-<p>Note: only pick one answer!!!!!!</p>
-<button id="startButton" name="startButton" (click)="beginQuiz()">Begin Spring Quiz</button>
+<button id="startButton" name="startButton" (click)="takeQuiz()" [hidden]="start">Begin Spring Quiz</button>
 <div *ngIf="start">
     <div>
-        <span>Time Elapsed: {{quizService.displayTimeElapsed()}}</span>
-        <div class="progress">
-            <div class="determinate" [style.width.%]="(quizService.qnProgress + 1)*10"></div>
-        </div>
-        <h2>Question {{currentQuestionNumber}}</h2>
-        <form action="">
-            <h3>Insert Question Here {{question}}</h3>
-            <input type="checkbox" id="choice1" name="choice1" value="choice1"> Choice 1<br>
-            <input type="checkbox" id="choice2" name="choice2" value="choice2"> Choice 2<br>
-            <input type="checkbox" id="choice3" name="choice3" value="choice3"> Choice 3<br>
-            <input type="checkbox" id="choice4" name="choice4" value="choice4"> Choice 4<br>
-            <input type="checkbox" id="choice5" name="choice5" value="choice5"> Choice 5<br>
+        <h2>Question {{questionNumber}}</h2>
+        <form>
+            <div>
+                <h3>{{question}}</h3>
+                <div>
+                    <button class="checkbox" id=1 name="choice1"
+                        (click)="checker1()">{{choice1}}</button><br>
+                </div>
+                <div>
+                    <button class="checkbox" id=2 name="choice2"
+                    (click)="checker2()">{{choice2}}</button><br>
+                </div>
+                <div>
+                    <button class="checkbox" id=3 name="choice3"
+                    (click)="checker3()">{{choice3}}</button><br>
+                </div>
+                <div>
+                    <button class="checkbox" id=4 name="choice4"
+                    (click)="checker4()">{{choice4}}</button><br>
+                </div>
+                <div>
+                    <button class="checkbox" id=5 name="choice5"
+                    (click)="checker5()">{{choice5}}</button><br>
+                </div>
+                <button class="btn btn-primary" (click)='previous();takeQuiz()'>Previous</button>
+                <button class="btn btn-primary" (click)='next();takeQuiz()'>Next</button>
+                <!-- <button type="submit">Submit</button> -->
 
-            <button type="submit" class="btn btn-primary">Previous</button>
-            <button type="submit" class="btn btn-primary">Next</button>
-
-
+            </div>
         </form>
 
 
 
     </div>
 
+</div>
+
+<div *ngIf="wrong">
+    <h1>Incorrect!</h1>
+</div>
+<div *ngIf="correct">
+    <h1>Correct!</h1>
 </div>
 
