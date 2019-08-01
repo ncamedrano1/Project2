@@ -19,7 +19,7 @@ export class Quiz8Component implements OnInit {
   ngOnInit() {
     this.quizService.seconds = 0;
     this.quizService.qnProgress = 0;
-    this.quizService.getQuestions().subscribe(
+    this.quizService.getQuestionsSubject('spring').subscribe(
       (data: any) => {
         this.quizService.qns = data;
         this.startTimer();

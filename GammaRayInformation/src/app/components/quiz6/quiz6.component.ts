@@ -19,7 +19,7 @@ export class Quiz6Component implements OnInit {
   ngOnInit() {
     this.quizService.seconds = 0;
     this.quizService.qnProgress = 0;
-    this.quizService.getQuestions().subscribe(
+    this.quizService.getQuestionsSubject('devops').subscribe(
       (data: any) => {
         this.quizService.qns = data;
         this.startTimer();

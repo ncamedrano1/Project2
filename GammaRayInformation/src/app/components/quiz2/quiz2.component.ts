@@ -18,7 +18,7 @@ export class Quiz2Component implements OnInit {
   ngOnInit() {
     this.quizService.seconds = 0;
     this.quizService.qnProgress = 0;
-    this.quizService.getQuestions().subscribe(
+    this.quizService.getQuestionsSubject('sql').subscribe(
       (data: any) => {
         this.quizService.qns = data;
         this.startTimer();

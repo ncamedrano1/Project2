@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class QuizService {
-  readonly rootUrl = 'http://3.16.111.130:8085/Revature/Titanium';
+  readonly rootUrl = 'http://3.16.111.130:8085/RevatureTitanium/questions/allQuestions';
   QId: number;
   qns: any[];
   seconds: number;
@@ -21,14 +21,9 @@ export class QuizService {
 
   }
 
-  getQuestions() {
-    return this.http.get(this.rootUrl + '/questions');
+  getQuestionsSubject(subject) {
+    console.log(this.http.get(this.rootUrl+'-'+subject))
+    return this.http.get(this.rootUrl + '-'+subject);
 
   }
-
-  storeId(id) {
-    this.QId = id;
-    
-  }
-
 }
