@@ -12,6 +12,8 @@ export class Quiz3Component implements OnInit {
   form: FormGroup
   currentQuestionNumber: number;
   start: boolean = false;
+  correct: boolean = false;
+  wrong: boolean = false;
   questionNumber: number;
   question: string;
   choices: string[];
@@ -73,13 +75,13 @@ export class Quiz3Component implements OnInit {
   }
 
   next() {
-    
-    console.log(document.getElementById("choice1"))
     if (this.questionNumber > 0 && this.questionNumber < this.quizService.qns.length) {
       this.questionNumber++
     } else {
       this.questionNumber = this.questionNumber
     }
+    this.correct = false
+    this.wrong=false
 
     
     
@@ -92,6 +94,9 @@ export class Quiz3Component implements OnInit {
     } else {
       this.questionNumber = this.questionNumber
     }
+    this.correct = false
+    this.wrong=false
+
   }
 
 
@@ -120,8 +125,68 @@ export class Quiz3Component implements OnInit {
     return array;
   }
 
-  submission(){
-    console.log(document.getElementById("choice1").getAttribute("checked"))
+  checker1(){
+    
+    if (this.choice1 == this.quizService.qns[this.questionNumber-1]['answer']){
+      console.log("yay")
+      this.correct = true
+      this.wrong=false
+    } else{
+      console.log("Incorrect choice!")
+      this.wrong = true
+      this.correct=false
+    }
+  }
+
+  checker2(){
+    
+    if (this.choice2 == this.quizService.qns[this.questionNumber-1]['answer']){
+      console.log("yay")
+      this.correct = true
+      this.wrong=false
+    } else{
+      console.log("Incorrect choice!")
+      this.wrong = true
+      this.correct=false
+    }
+  }
+
+  checker3(){
+    
+    if (this.choice3 == this.quizService.qns[this.questionNumber-1]['answer']){
+      console.log("yay")
+      this.correct = true
+      this.wrong=false
+    } else{
+      console.log("Incorrect choice!")
+      this.wrong = true
+      this.correct=false
+    }
+  }
+  checker4(){
+    
+    if (this.choice4 == this.quizService.qns[this.questionNumber-1]['answer']){
+      console.log("yay")
+      this.correct = true
+      this.wrong=false
+    } else{
+      console.log("Incorrect choice!")
+      this.wrong = true
+      this.correct=false
+    }
+  }
+
+  checker5(){
+    
+    if (this.choice5 == this.quizService.qns[this.questionNumber-1]['answer']){
+      console.log("yay")
+      this.correct = true
+      this.wrong=false
+    } else{
+      console.log("Incorrect choice!")
+      this.wrong = true
+      this.correct=false
+    }
   }
 
 }

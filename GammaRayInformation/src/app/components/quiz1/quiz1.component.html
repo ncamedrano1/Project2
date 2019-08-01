@@ -1,20 +1,35 @@
-<p>Note: only pick one answer!!!!!!</p>
 <button id="startButton" name="startButton" (click)="takeQuiz()" [hidden]="start">Begin Java 8 Quiz</button>
 <div *ngIf="start">
     <div>
         <h2>Question {{questionNumber}}</h2>
-        <form [formGroup]="registrationForm" (ngSubmit)="submission()">
-            <h3>{{question}}</h3>
-            <input type="checkbox" class="checkbox" id="choice1" formControlName="choice1" name="choice1" value="choice1" ngModel>{{choice1}}<br>
-            <input type="checkbox" class="checkbox" id="choice2" name="choice2" value="choice2">{{choice2}}<br>
-            <input type="checkbox" class="checkbox" id="choice3" name="choice3" value="choice3">{{choice3}}<br>
-            <input type="checkbox" class="checkbox" id="choice4" name="choice4" value="choice4">{{choice4}}<br>
-            <input type="checkbox" class="checkbox" id="choice5" name="choice5" value="choice5">{{choice5}}<br>
+        <form>
+            <div>
+                <h3>{{question}}</h3>
+                <div>
+                    <button class="checkbox" id=1 name="choice1"
+                        (click)="checker1()">{{choice1}}</button><br>
+                </div>
+                <div>
+                    <button class="checkbox" id=2 name="choice2"
+                    (click)="checker2()">{{choice2}}</button><br>
+                </div>
+                <div>
+                    <button class="checkbox" id=3 name="choice3"
+                    (click)="checker3()">{{choice3}}</button><br>
+                </div>
+                <div>
+                    <button class="checkbox" id=4 name="choice4"
+                    (click)="checker4()">{{choice4}}</button><br>
+                </div>
+                <div>
+                    <button class="checkbox" id=5 name="choice5"
+                    (click)="checker5()">{{choice5}}</button><br>
+                </div>
+                <button class="btn btn-primary" (click)='previous();takeQuiz()'>Previous</button>
+                <button class="btn btn-primary" (click)='next();takeQuiz()'>Next</button>
+                <!-- <button type="submit">Submit</button> -->
 
-            <button class="btn btn-primary" (click)='previous();takeQuiz()'>Previous</button>
-            <button type="submit" class="btn btn-primary" (click)='next();takeQuiz()'>Next</button>
-
-
+            </div>
         </form>
 
 
@@ -23,37 +38,10 @@
 
 </div>
 
+<div *ngIf="wrong">
+    <h1>Incorrect!</h1>
+</div>
+<div *ngIf="correct">
+    <h1>Correct!</h1>
+</div>
 
-
-
-
-<!-- <div class="progress">
-    <div class="determinate" style="width: 70%"></div>
-    <span>Time Elapsed: {{quizService.displayTimeElapsed()}}</span>
-</div> -->
-<!-- <div class="row" *ngIf="quizService.qns">
-    <div class="col s8 offset-s">
-        <span>Time Elapsed: {{quizService.displayTimeElapsed()}}</span>
-        <div class="progress">
-            <div class="determinate" [style.width.%]="(quizService.qnProgress + 1)*10"></div>
-        </div>
-        <div class="card blue-grey darken-1">
-            <div class="card-content white-text">
-                <span class="card-title">{{quizService.qnProgress+1}}</span>
-                <p>{{quizService.qns[quizService.qnProgress].Qn</p>
-            </div>
-            <div class="card-action">
-                <ul class="collection answer">
-                    <ng-container *ngFor="let option of quizService.qns[quizService.qnProgress].Options; let i =index">
-                        <li *ngIf="option != null" class="collection-item" (click)="Answer(quizService.qns[quizService.qnProgress].QnID,i)">
-                            {{option}}
-                    </li>
-                    </ng-container>
-                    </ul>
-            </div>
-        </div>
-
-
-
-    </div>
-</div> -->
