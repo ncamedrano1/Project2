@@ -24,6 +24,7 @@ import { Flashcards5Component } from './components/flashcardsPages/flashcards5/f
 import { Flashcards6Component } from './components/flashcardsPages/flashcards6/flashcards6.component';
 import { Flashcards7Component } from './components/flashcardsPages/flashcards7/flashcards7.component';
 import { Flashcards8Component } from './components/flashcardsPages/flashcards8/flashcards8.component';
+import { AuthGuard } from 'src/app/helpers/auth.guard';
 
 
 const routes: Routes = [
@@ -37,7 +38,7 @@ const routes: Routes = [
 },
 {
   path: '',
-  component: HomeComponent
+  component: HomeComponent, canActivate: [AuthGuard]
 },
 {
   path: 'flashcards',
@@ -131,6 +132,10 @@ component: RegisterComponent
 {
   path: 'flashcards8',
   component: Flashcards8Component
+},
+{
+  path: '**',
+  redirectTo: ''
 }
 ];
 

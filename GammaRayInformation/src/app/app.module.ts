@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 // import * as CanvasJS from './canvasjs.min';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,6 +33,9 @@ import { Flashcards6Component } from './components/flashcardsPages/flashcards6/f
 import { Flashcards7Component } from './components/flashcardsPages/flashcards7/flashcards7.component';
 import { Flashcards8Component } from './components/flashcardsPages/flashcards8/flashcards8.component';
 import { Flashcards2Component } from './components/flashcardsPages/flashcards2/flashcards2.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { JwtInterceptor } from 'src/app/helpers/jwt.interceptor';
+import { ErrorInterceptor } from 'src/app/helpers/error.interceptor';
 
 
 @NgModule({
@@ -62,7 +65,8 @@ import { Flashcards2Component } from './components/flashcardsPages/flashcards2/f
     Flashcards5Component,
     Flashcards6Component,
     Flashcards7Component,
-    Flashcards8Component
+    Flashcards8Component,
+    AlertComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
@@ -73,7 +77,10 @@ import { Flashcards2Component } from './components/flashcardsPages/flashcards2/f
     HttpClientModule,
     //CanvasJS
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
