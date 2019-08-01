@@ -1,13 +1,12 @@
 package com.revature.test.backend;
 
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;
-import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.titanium.models.SubjectTypes;
 import com.titanium.repository.SubjectTypesRepositoryImpl;
 
 public class BackTest {
@@ -41,7 +40,14 @@ public class BackTest {
 	
 	@Test
 	public void findSubName() {
-		//assertNotNull(stri.);
+		assertNotNull(stri.findSubjectNameById(7));
+		//assertEquals();
+	}
+	
+	@Test
+	public void findIdByName() {
+		//assertEquals()
+		//assertEquals(7, stri.findSubjectIdByName("servlets"));
 	}
 	
 	@AfterTest
