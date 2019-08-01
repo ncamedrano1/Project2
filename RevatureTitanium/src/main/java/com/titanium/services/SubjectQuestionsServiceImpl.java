@@ -3,9 +3,9 @@ package com.titanium.services;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.titanium.models.QuizQuestions;
 import com.titanium.models.QuizTemplate;
 import com.titanium.models.SubjectFlashCards;
 import com.titanium.models.SubjectQuestions;
@@ -79,14 +79,23 @@ public class SubjectQuestionsServiceImpl implements SubjectQuestionsService {
 	}
 
 	@Override
-	public List<String[]> getQuiz(Integer quizSize, Integer... quizType) {
+	public List<QuizQuestions> getQuiz(Integer quizSize, String... quizType) {
+		List<SubjectQuestions> questions = new ArrayList<SubjectQuestions>();
+		for (String qt : quizType) {
+			questions.addAll(findAllQuestionsBySubject(qt));
+		}
+		List<QuizQuestions> newQuiz = new QuizTemplate().randomizeQuiz(quizSize, questions);
+		return newQuiz;
+	}
+
+	@Override
+	public List<QuizQuestions> getQuiz(Integer quizSize, Integer... quizType) {
 		List<SubjectQuestions> questions = new ArrayList<SubjectQuestions>();
 		for (Integer i : quizType) {
 			System.out.println("getting questions of type: " + new SubjectTypesRepositoryImpl().findSubjectNameById(i));
-//			questions.addAll(findAllQuestionsBySubject(i));
+			questions.addAll(findAllQuestionsBySubject(i));
 		}
-//		List<String[]> newQuiz = new QuizTemplate().randomizeQuiz(quizSize, questions);
-//		return newQuiz;
-		return null;
+		List<QuizQuestions> newQuiz = new QuizTemplate().randomizeQuiz(quizSize, questions);
+		return newQuiz;
 	}
 }

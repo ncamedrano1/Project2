@@ -1,5 +1,6 @@
 package com.titanium.main;
 
+import com.titanium.models.QuizTemplate;
 import com.titanium.repository.SubjectQuestionsRepository;
 import com.titanium.repository.SubjectQuestionsRepositoryImpl;
 import com.titanium.repository.SubjectTypesRepository;
@@ -29,8 +30,15 @@ public class Driver {
 		SubjectQuestionsRepository questRepo = new SubjectQuestionsRepositoryImpl();
 //		System.out.println(questRepo.findQuestionById(199));
 
-		System.out.println(questServ.getQuiz(1, 1));
+		System.out.println(questServ.getQuiz(5, 1));
 
 //		System.out.println(questServ.findAllFlashCardsBySubject(7));
+
+//		QuizTemplate qt = new QuizTemplate();
+//		System.out.println(qt.getRandomFromRange(0, 5));
+//		System.out.println(qt.getRandomFromRange(0, 5));
+//		System.out.println(qt.getRandomFromRange(0, 5));
+//		System.out.println(qt.getRandomFromRange(0, 5));
+//		System.out.println(qt.getRandomFromRange(0, 5));
 	}
 }

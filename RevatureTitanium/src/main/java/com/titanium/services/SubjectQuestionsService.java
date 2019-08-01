@@ -2,6 +2,7 @@ package com.titanium.services;
 
 import java.util.List;
 
+import com.titanium.models.QuizQuestions;
 import com.titanium.models.SubjectFlashCards;
 import com.titanium.models.SubjectQuestions;
 
@@ -31,6 +32,8 @@ public interface SubjectQuestionsService {
 	// Find a single flash card with Id
 	SubjectFlashCards findFlashCard(Integer id);
 
-	List<String[]> getQuiz(Integer quizSize, Integer... quizType);
+	List<QuizQuestions> getQuiz(Integer quizSize, Integer... quizType);
+
+	List<QuizQuestions> getQuiz(Integer quizSize, String... quizType);
 
 }
