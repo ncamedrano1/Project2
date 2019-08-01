@@ -18,10 +18,8 @@ import com.titanium.repository.SubjectTypesRepositoryImpl;
 @Service
 public class SubjectQuestionsServiceImpl implements SubjectQuestionsService {
 
-	@Autowired
 	private SubjectQuestionsRepository subjectQuestionsRepository = new SubjectQuestionsRepositoryImpl();
 
-	@Autowired
 	private SubjectFlashCardsRepository subjectFlashCardsRepository = new SubjectFlashCardsRepositoryImpl();
 
 	public SubjectQuestionsServiceImpl() {

@@ -12,12 +12,11 @@ import com.titanium.models.SubjectTypes;
 import com.titanium.services.SubjectTypesService;
 import com.titanium.services.SubjectTypesServiceImpl;
 
-@Controller("subjecttypescontroller")
+@Controller
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/subjects")
 public class SubjectTypesControllerImpl {
 
-	@Autowired
 	private SubjectTypesService subjectTypesService = new SubjectTypesServiceImpl();
 
 	@RequestMapping("/all")

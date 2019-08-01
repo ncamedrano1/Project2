@@ -12,7 +12,6 @@ import com.titanium.repository.SubjectTypesRepositoryImpl;
 @Service
 public class SubjectTypesServiceImpl implements SubjectTypesService {
 
-	@Autowired
 	private SubjectTypesRepository subjectTypesRepository = new SubjectTypesRepositoryImpl();
 
 	public SubjectTypesServiceImpl() {

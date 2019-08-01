@@ -16,7 +16,6 @@ import com.titanium.models.SubjectTypesMapper;
 @Repository
 public class SubjectTypesRepositoryImpl implements SubjectTypesRepository {
 
-	@Autowired
 	private DataSource dataSource = new JdbcConfig().dataSource();
 	private JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 

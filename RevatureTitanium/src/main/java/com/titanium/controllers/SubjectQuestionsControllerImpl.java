@@ -14,17 +14,21 @@ import com.titanium.models.SubjectQuestions;
 import com.titanium.services.SubjectQuestionsService;
 import com.titanium.services.SubjectQuestionsServiceImpl;
 
-@Controller("subjectquestionscontroller")
+@Controller
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/questions")
 public class SubjectQuestionsControllerImpl {
 
-	@Autowired
 	private SubjectQuestionsService subjectQuestionsService = new SubjectQuestionsServiceImpl();
 
 	@RequestMapping("/allQuestions")
 	public @ResponseBody List<SubjectQuestions> getAllQuestions() {
 		return subjectQuestionsService.findAllQuestions();
+	}
+
+	@RequestMapping("/allQuestions-{subject}")
+	public @ResponseBody List<SubjectQuestions> getAllQuestionsBySubject(@PathVariable String subject) {
+		return subjectQuestionsService.findAllQuestionsBySubject(subject);
 	}
 
 	@RequestMapping("/allFlashCards")

@@ -3,6 +3,9 @@ package com.titanium.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component("quizTemplate")
 public class QuizTemplate {
 
 	private List<String[]> quiz;

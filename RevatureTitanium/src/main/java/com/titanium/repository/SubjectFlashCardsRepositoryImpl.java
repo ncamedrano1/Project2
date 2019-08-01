@@ -13,7 +13,7 @@ import com.titanium.models.SubjectFlashCards;
 import com.titanium.models.SubjectFlashCardsMapper;
 
 public class SubjectFlashCardsRepositoryImpl implements SubjectFlashCardsRepository {
-	@Autowired
+
 	private DataSource dataSource = new JdbcConfig().dataSource();
 	private JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
