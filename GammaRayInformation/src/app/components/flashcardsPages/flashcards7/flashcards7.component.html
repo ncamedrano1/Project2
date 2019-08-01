@@ -1,1 +1,23 @@
-<p>flashcards7 works!</p>
+<button id="startButton" name="startButton" (click)="takeFlashcards()" [hidden]="start">Begin Servlets Flashcards</button>
+<div class="row">
+
+    <div class="col-xl-12 mx-auto">
+        <div class="tp-wrapper">
+            <label>Card {{questionNumber}}</label>
+            <div class="tp-box" (click)="toggleFlip()" [@flipState]="flip">
+                <div class="tp-box__side tp-box__front">
+                    {{question}}
+                </div>
+                <div class="tp-box__side tp-box__back">
+                    {{answer}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row mx-auto">
+    <button type="submit" class="btn btn-primary" (click)='previous();takeFlashcards()'>Previous</button>
+    <button type="submit" class="btn btn-primary" (click)='next();takeFlashcards()'>Next</button>
+</div>

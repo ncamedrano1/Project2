@@ -5,15 +5,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class FlashcardService {
-  readonly rootUrl = 'http://3.16.111.130:8085/Revature/Titanium';
+  readonly rootUrl = 'http://3.16.111.130:8085/RevatureTitanium/questions/allQuestions';
   FId: number;
   fns: any[];
   fnProgress: number;
 
   constructor(private http: HttpClient) { }
 
-  getQuestions() {
-    return this.http.get(this.rootUrl + '/questions');
+  getQuestionsSubject(subject) {
+    console.log(this.http.get(this.rootUrl+'-'+subject))
+    return this.http.get(this.rootUrl + '-'+subject);
   }
 
   storeId(id) {
