@@ -28,7 +28,7 @@ export class AuthenticationService {
    }
 
    login(username, password) {
-     return this.http.post<any>("http://3.16.111.130:8085/RevatureTitanium/users/authenticate", { username, password })
+     return this.http.post<any>("http://3.16.111.130:8085/RevatureTitanium/users/login", { username, password })
       .pipe(map(account => {
         //store user details and jwt token in storage to keep user logged in btw page refreshes
         localStorage.setItem(`currentAccount`, JSON.stringify(account));

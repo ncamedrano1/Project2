@@ -6,6 +6,7 @@ import { Account } from 'src/app/components/register/account/account';
 
 import 'src/app/content/app.less';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,7 +25,10 @@ export class AppComponent {
   logout() {
     this.authenticationService.logout();
     this.router.navigate(['/login']);
+    
 }
 
   title = 'GammaRayInformation';
+
+  
 }
