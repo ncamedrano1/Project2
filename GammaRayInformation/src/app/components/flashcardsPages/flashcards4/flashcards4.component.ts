@@ -32,7 +32,7 @@ export class Flashcards4Component implements OnInit {
 
   ngOnInit() {
     this.flashcardService.fnProgress = 0;
-    this.flashcardService.getQuestionsSubject('java').subscribe(
+    this.flashcardService.getQuestionsSubject('angular').subscribe(
       (data: any) => {
         this.flashcardService.fns = data;
       }
