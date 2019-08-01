@@ -16,6 +16,14 @@ import { Quiz5Component } from './components/quiz5/quiz5.component';
 import { Quiz6Component } from './components/quiz6/quiz6.component';
 import { Quiz7Component } from './components/quiz7/quiz7.component';
 import { Quiz8Component } from './components/quiz8/quiz8.component';
+import { Flashcards1Component } from './components/flashcardsPages/flashcards1/flashcards1.component';
+import { Flashcards2Component } from './components/flashcardsPages/flashcards2/flashcards2.component';
+import { Flashcards3Component } from './components/flashcardsPages/flashcards3/flashcards3.component';
+import { Flashcards4Component } from './components/flashcardsPages/flashcards4/flashcards4.component';
+import { Flashcards5Component } from './components/flashcardsPages/flashcards5/flashcards5.component';
+import { Flashcards6Component } from './components/flashcardsPages/flashcards6/flashcards6.component';
+import { Flashcards7Component } from './components/flashcardsPages/flashcards7/flashcards7.component';
+import { Flashcards8Component } from './components/flashcardsPages/flashcards8/flashcards8.component';
 
 
 const routes: Routes = [
@@ -91,6 +99,38 @@ component: RegisterComponent
 {
   path: 'quiz8',
   component:  Quiz8Component
+},
+{
+  path: 'flashcards1',
+  component: Flashcards1Component
+},
+{
+  path: 'flashcards2',
+  component: Flashcards2Component
+},
+{
+  path: 'flashcards3',
+  component: Flashcards3Component
+},
+{
+  path: 'flashcards4',
+  component: Flashcards4Component
+},
+{
+  path: 'flashcards5',
+  component: Flashcards5Component
+},
+{
+  path: 'flashcards6',
+  component: Flashcards6Component
+},
+{
+  path: 'flashcards7',
+  component: Flashcards7Component
+},
+{
+  path: 'flashcards8',
+  component: Flashcards8Component
 }
 ];
 

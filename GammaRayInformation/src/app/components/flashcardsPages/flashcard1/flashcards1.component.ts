@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Router } from '@angular/router';
 import { FlashcardService } from 'src/app/services/flashcard.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-flashcards',
-  templateUrl: './flashcards.component.html',
-  styleUrls: ['./flashcards.component.css'],
+  selector: 'app-flashcards1',
+  templateUrl: './flashcards1.component.html',
+  styleUrls: ['./flashcards1.component.css'],
   animations: [
     trigger('flipState', [
       state('active', style({
@@ -20,14 +20,22 @@ import { FlashcardService } from 'src/app/services/flashcard.service';
     ])
   ]
 })
-export class FlashcardsComponent implements OnInit {
+export class Flashcards1Component implements OnInit {
+  currentQuestionNumber: number;
+  subjectId: number;
 
-  constructor(private router: Router, public flashcardService: FlashcardService) { }
+  constructor(private router: Router, private flashcardService: FlashcardService) { }
 
   ngOnInit() {
+    this.flashcardService.fnProgress = 0;
+    this.flashcardService.getQuestions().subscribe(
+      (data: any) => {
+        this.flashcardService.fns = data;
+      }
+    );
   }
 
-  flasher(id){
+  flasher(id) {
     this.router.navigate(["flashcard" + id])
     console.log(id)
   }
@@ -36,7 +44,5 @@ export class FlashcardsComponent implements OnInit {
   toggleFlip() {
     this.flip = (this.flip == 'inactive') ? 'active' : 'inactive';
   }
-
-  
 
 }
