@@ -1,6 +1,5 @@
 package com.titanium.main;
 
-import com.titanium.models.QuizTemplate;
 import com.titanium.repository.SubjectQuestionsRepository;
 import com.titanium.repository.SubjectQuestionsRepositoryImpl;
 import com.titanium.repository.SubjectTypesRepository;

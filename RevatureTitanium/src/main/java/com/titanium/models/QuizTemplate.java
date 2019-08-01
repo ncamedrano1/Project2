@@ -3,9 +3,6 @@ package com.titanium.models;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
-import org.testng.log4testng.Logger;
-
 public class QuizTemplate {
 	private List<QuizQuestions> quiz;
 

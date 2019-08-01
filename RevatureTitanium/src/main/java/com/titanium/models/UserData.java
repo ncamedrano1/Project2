@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class UserData {
 	private Integer user_id;
 	private String username;
-	private String password;
+	private Integer password;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -17,7 +17,7 @@ public class UserData {
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserData(Integer user_id, String username, String password, String firstName, String lastName, String email,
+	public UserData(Integer user_id, String username, Integer password, String firstName, String lastName, String email,
 			Integer user_role_id) {
 		super();
 		this.user_id = user_id;
@@ -112,11 +112,11 @@ public class UserData {
 		this.username = username;
 	}
 
-	public String getPassword() {
+	public Integer getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(Integer password) {
 		this.password = password;
 	}
 
