@@ -28,7 +28,7 @@ export class FlashcardsComponent implements OnInit {
   }
 
   flasher(id){
-    this.router.navigate(["flashcard" + id])
+    this.router.navigate(["flashcards" + id])
     console.log(id)
   }
 
