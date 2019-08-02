@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.titanium.aspect.LoggingAspect;
 import com.titanium.configuration.JdbcConfig;
 import com.titanium.models.SubjectQuestions;
 import com.titanium.models.SubjectQuestionsMapper;
@@ -20,6 +21,7 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 
 	private DataSource dataSource = new JdbcConfig().dataSource();
 	private JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+	private LoggingAspect la = new LoggingAspect();
 
 	@PostConstruct
 	private void postConstruct() {
@@ -29,6 +31,7 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 	// Find all Questions
 	@Override
 	public List<SubjectQuestions> findAll() {
+		la.callLog(this);
 		System.out.println("findAll inside :: " + this.getClass().getName());
 
 		String query = "SELECT * FROM subjects_questions";
@@ -43,6 +46,7 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 
 	// Find a single question from a specific subject
 	public SubjectQuestions findQuestionById(Integer id) {
+		la.callLog(this);
 		String query = "SELECT * FROM subjects_questions WHERE question_id=?";
 		SubjectQuestions question = (SubjectQuestions) jdbcTemplate.queryForObject(query, new Object[] { id },
 				new SubjectQuestionsMapper());
@@ -52,6 +56,7 @@ public class SubjectQuestionsRepositoryImpl implements SubjectQuestionsRepositor
 	// Find all Questions of from a specific Subject
 	@Override
 	public List<SubjectQuestions> findAllBySubject(Integer id) {
+		la.callLog(this);
 		System.out.println("findAllBySubject inside :: " + this.getClass().getName());
 
 		String query = "SELECT * FROM subjects_questions WHERE subject_id=" + id;

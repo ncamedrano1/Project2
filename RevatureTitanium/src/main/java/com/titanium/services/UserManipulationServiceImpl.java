@@ -1,13 +1,16 @@
 package com.titanium.services;
 
+import com.titanium.aspect.LoggingAspect;
 import com.titanium.models.UserData;
 import com.titanium.repository.UserDataRepository;
 import com.titanium.repository.UserDataRepositoryImpl;
 
 public class UserManipulationServiceImpl implements UserManipulationService {
+	LoggingAspect la = new LoggingAspect();
 
 	@Override
 	public Boolean registerUser(String username, String password, String firstName, String lastName) {
+		la.callLog(this);
 		// check if username exists in DB
 		UserQueryService uqs = new UserQueryServiceImpl();
 		UserData user = new UserData();

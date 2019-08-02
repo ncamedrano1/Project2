@@ -8,6 +8,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.titanium.aspect.LoggingAspect;
 import com.titanium.configuration.JdbcConfig;
 import com.titanium.models.SubjectFlashCards;
 import com.titanium.models.SubjectFlashCardsMapper;
@@ -16,6 +17,7 @@ public class SubjectFlashCardsRepositoryImpl implements SubjectFlashCardsReposit
 
 	private DataSource dataSource = new JdbcConfig().dataSource();
 	private JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+	private LoggingAspect la = new LoggingAspect();
 
 	@PostConstruct
 	private void postConstruct() {
@@ -25,6 +27,7 @@ public class SubjectFlashCardsRepositoryImpl implements SubjectFlashCardsReposit
 	// Find all FlashCards
 	@Override
 	public List<SubjectFlashCards> findAll() {
+		la.callLog(this);
 		System.out.println("findAll inside :: " + this.getClass().getName());
 
 		String query = "SELECT * FROM subjects_questions";
@@ -37,6 +40,7 @@ public class SubjectFlashCardsRepositoryImpl implements SubjectFlashCardsReposit
 	// Find a single FlashCard from a specific subject
 	@Override
 	public SubjectFlashCards findFlashCardById(Integer id) {
+		la.callLog(this);
 		String query = "SELECT * FROM subject_questions WHERE question_id=?";
 		SubjectFlashCards question = (SubjectFlashCards) jdbcTemplate.queryForObject(query, new Object[] { id },
 				new SubjectFlashCardsMapper());
@@ -46,6 +50,7 @@ public class SubjectFlashCardsRepositoryImpl implements SubjectFlashCardsReposit
 	// Find all FlashCards of from a specific Subject
 	@Override
 	public List<SubjectFlashCards> findAllBySubject(Integer id) {
+		la.callLog(this);
 		System.out.println("findAllBySubject inside :: " + this.getClass().getName());
 		String query = "SELECT * FROM subjects_questions WHERE subject_id=" + id;
 		List<SubjectFlashCards> result = jdbcTemplate.query(query,

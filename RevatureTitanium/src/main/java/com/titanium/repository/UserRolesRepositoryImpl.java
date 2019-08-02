@@ -8,14 +8,15 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.titanium.aspect.LoggingAspect;
 import com.titanium.configuration.JdbcConfig;
-import com.titanium.models.UserData;
 import com.titanium.models.UserRoles;
 
 @Repository
 public class UserRolesRepositoryImpl implements UserRolesRepository {
 	private DataSource dataSource = new JdbcConfig().dataSource();
 	private JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+	LoggingAspect la = new LoggingAspect();
 
 	@PostConstruct
 	private void postConstruct() {
@@ -24,6 +25,7 @@ public class UserRolesRepositoryImpl implements UserRolesRepository {
 
 	@Override
 	public List<UserRoles> findAll() {
+		la.callLog(this);
 		String query = "SELECT * FROM users_roles";
 		List<UserRoles> result = jdbcTemplate.query(query,
 				(rs, rowNum) -> new UserRoles(rs.getInt("users_role_id"), rs.getString("users_role")));
@@ -32,6 +34,7 @@ public class UserRolesRepositoryImpl implements UserRolesRepository {
 
 	@Override
 	public String findUserRoleById(Integer id) {
+		la.callLog(this);
 		String query = "SELECT users_role FROM users_roles WHERE users_role_id=?";
 		String role = (String) jdbcTemplate.queryForObject(query, new Object[] { id }, String.class);
 		return role;
@@ -39,6 +42,7 @@ public class UserRolesRepositoryImpl implements UserRolesRepository {
 
 	@Override
 	public Integer findIdByUserRole(String role) {
+		la.callLog(this);
 		String query = "SELECT users_role_id FROM users_roles WHERE LOWER(users_role)=?";
 		Integer roleId = Integer
 				.parseInt(jdbcTemplate.queryForObject(query, new Object[] { role.toLowerCase() }, String.class));

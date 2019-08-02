@@ -1,5 +1,6 @@
 package com.titanium.services;
 
+import com.titanium.aspect.LoggingAspect;
 import com.titanium.models.UserData;
 import com.titanium.repository.UserDataRepository;
 import com.titanium.repository.UserDataRepositoryImpl;
@@ -7,9 +8,11 @@ import com.titanium.repository.UserDataRepositoryImpl;
 public class UserQueryServiceImpl implements UserQueryService {
 
 	private UserDataRepository udr = null;
-
+	LoggingAspect la = new LoggingAspect();
+	
 	@Override
 	public Boolean checkUsernameExists(String username) {
+		la.callLog(this);
 		udr = new UserDataRepositoryImpl();
 		UserData user = null;
 		if ((user = udr.findUser(username.toLowerCase())) != null) {
@@ -20,6 +23,7 @@ public class UserQueryServiceImpl implements UserQueryService {
 
 	@Override
 	public Boolean confirmCredentials(String username, String password) {
+		la.callLog(this);
 		udr = new UserDataRepositoryImpl();
 		UserData user = null;
 		if ((user = udr.findUser(username.toLowerCase())) != null) {

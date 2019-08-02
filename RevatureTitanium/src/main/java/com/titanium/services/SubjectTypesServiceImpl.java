@@ -2,9 +2,9 @@ package com.titanium.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.titanium.aspect.LoggingAspect;
 import com.titanium.models.SubjectTypes;
 import com.titanium.repository.SubjectTypesRepository;
 import com.titanium.repository.SubjectTypesRepositoryImpl;
@@ -13,6 +13,7 @@ import com.titanium.repository.SubjectTypesRepositoryImpl;
 public class SubjectTypesServiceImpl implements SubjectTypesService {
 
 	private SubjectTypesRepository subjectTypesRepository = new SubjectTypesRepositoryImpl();
+	LoggingAspect la = new LoggingAspect();
 
 	public SubjectTypesServiceImpl() {
 		super();
@@ -21,6 +22,7 @@ public class SubjectTypesServiceImpl implements SubjectTypesService {
 
 	@Override
 	public List<SubjectTypes> findAll() {
+		la.callLog(this);
 		System.out.println("findAll inside :: " + this.getClass().getName());
 
 		// WHY IS THIS NULL?

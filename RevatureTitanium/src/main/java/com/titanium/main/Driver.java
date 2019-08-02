@@ -11,6 +11,8 @@ import com.titanium.services.SubjectTypesServiceImpl;
 
 public class Driver {
 
+//	private static String testPass = "testPassword";
+
 	public static void main(String[] args) {
 		SubjectTypesService subServ = new SubjectTypesServiceImpl();
 //		System.out.println(subServ.findAll());
@@ -29,7 +31,7 @@ public class Driver {
 		SubjectQuestionsRepository questRepo = new SubjectQuestionsRepositoryImpl();
 //		System.out.println(questRepo.findQuestionById(199));
 
-		System.out.println(questServ.getQuiz(5, 1));
+		questServ.getQuiz(5, 1);
 
 //		System.out.println(questServ.findAllFlashCardsBySubject(7));
 
@@ -39,5 +41,6 @@ public class Driver {
 //		System.out.println(qt.getRandomFromRange(0, 5));
 //		System.out.println(qt.getRandomFromRange(0, 5));
 //		System.out.println(qt.getRandomFromRange(0, 5));
+//		System.out.println(testPass.hashCode());
 	}
 }
