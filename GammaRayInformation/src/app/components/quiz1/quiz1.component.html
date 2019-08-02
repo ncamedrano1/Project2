@@ -13,18 +13,12 @@
     click triggers the 'start' boolean to change from false to true, allowing
     for the hidden div to appear.
 -->
-<button id="startButton" name="startButton" (click)="takeQuiz()" [hidden]="start">Begin Java 8 Quiz</button>
+
 <!--
     Here resides the code for the questions to appear from the database: 
     questionNumber refers quite obviously to the current question number,
     question is the question itself, and choices 1-5 represent the choices.
 -->
-<div *ngIf="start">
-    <div>
-        <h2>Question {{questionNumber}}</h2>
-        <form>
-            <div>
-                <h3>{{question}}</h3>
 <div class="col-xl-8">
     <br><button id="startButton" name="startButton" (click)="takeQuiz()" [hidden]="start">Begin Java 8 Quiz</button>
     <div *ngIf="start">
