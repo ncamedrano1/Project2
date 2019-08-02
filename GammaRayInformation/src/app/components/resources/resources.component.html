@@ -1,447 +1,568 @@
 <body><br>
-<div class="row">
-    <ul>
-    <h2>Java 8:</h2>
-    
-        <ul>
-            <li><h4>Reading Materials:</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>W3 Schools offers a variety of tutorials and code samples to help you learn
-                            a multitude of Programming Languages
-                        </label>
-                        <a class="nav-link" href="https://www.w3schools.com/java/">W3 School Tutorials</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>Here is a great article by techtarget.com which explains OOP. 
-                        </label>
-                        <a class="nav-link" href="https://searchmicroservices.techtarget.com/definition/object-oriented-programming-OOP">What is OOP?</a>
-                    </li>
-                    
-                </ul>
-                </li>
-        
+    <div>
+
+        <!-- Search Box for term(s) you want to search -->
+        <input type="text" class="search-textbox" name="stacksearch" [(ngModel)]=searchValue id=stacksearch
+            placeholder="Enter Search Here">
+
+        <!-- Button to submit query -->
+        <button (click)="searchStackOverflow()">Submit</button>
+
+        <!-- Area that response will be returned and appended to -->
+        <ul *ngIf="result">
             <li>
-                <h4>Video Materials</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>Here is a 9 Hour long video that can be used to
-                            learn crashcourse Java.
-                        </label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=grEKMHGYyns">Learn Java Complete Video</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>Here is a multiple video playlist in order to learn Java and navigate more easily.
-                        </label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=2dZiMBwX_5Q&list=PL_c9BZzLwBRKIMP_xNTJxi9lIgQhE51rF">Learn Java Playlist</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>This video is specifically used to learn OOP, the main idea in Java Coding. This is a more basic video
-                            , but its intent is to teach basics for further understanding.
-                        </label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=pTB0EiLXUC8">More Java Resources</a>
-                    </li>
-                </ul>
+                <label>{{titleArticle1}}</label><br>
+                <a href={{link1}}>{{link1}}</a>
             </li>
-        </ul>
-    </ul>
-</div>
 
-<div class="row">
-    <ul>
-    <h2>Oracle SQL:</h2>
-    
-        <ul>
-            <li><h4>Reading Materials:</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>This is the w3school tutorial for SQL in general.</label>
-                        <a class="nav-link" href="https://www.w3schools.com/sql/">W3 School SQL tutorial</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>Here is Oracle's website page for Oracle SQL along with a learn link.</label>
-                        <a class="nav-link" href="https://www.oracle.com/database/technologies/appdev/sql.html">Oracle SQL Website</a>
-                    </li>
-                    <li class="nav-item">
-                            <label>This is a tutorial over SQL concepts taught by Guru99.</label>
-                            <a class="nav-link" href="https://www.guru99.com/introduction-to-database-sql.html">Oracle SQL Website</a>
-                        </li>
-                </ul>
-                </li>
-        
             <li>
-                <h4>Video Materials</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>This is the start to a video series designed to help you learn Oracle SQL.</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=QHYuuXPdQNM">Oracle SQL Tutorial</a>
-                    </li>
-                    <li class="nav-item">
-                            <label>For those seeing SQL for the first time, this is a crachcourse 
-                                over what exactly SQL is and what stipulates a database.</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=27axs9dO7AE">Oracle SQL Tutorial</a>
-                        </li>
-                </ul>
+                <label>{{titleArticle2}}</label><br>
+                <a href={{link2}}>{{link2}}</a>
             </li>
-        </ul>
-    </ul>
-</div>
-    
-<div class="row">
-    <ul>
-    <h2>Front-End Languages:</h2>
-        <ul><h4>HTML 5</h4>
 
-            <ul>
-                <li><h4>Reading Materials:</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>What is now used is HTML 5, so here is the W3 Tutorial Over this.</label>
-                            <a class="nav-link" href="https://www.w3schools.com/html/default.asp">W3 School HTML Tutorial</a>
-                        </li>
-                        <li class="nav-item">
-                                <label>Here is a 'tutorial' which tells the history of HTML and how it is done.</label>
-                                <a class="nav-link" href="https://www.hostinger.com/tutorials/what-is-html">The Basics and History of HTML</a>
-                        </li>
-                    </ul>
-                    </li>
-            
-                <li>
-                    <h4>Video Materials</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>Here is a youtube playlist which not only gives a tutorial over
-                                HTML 5, but also explains CSS.
-                            </label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=YZZIAOOyLi0&list=PL_c9BZzLwBRK0vZL95_BLaednmdHfJOo9">HTML and CSS Tutorial Playlist</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </ul>
-        <ul><h4>CSS:</h4>
-            <ul>
-                <li><h4>Reading Materials:</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>Here W3 Schools offers an extensive library of CSS features.</label>
-                            <a class="nav-link" href="https://www.w3schools.com/css/css_intro.asp">W3 Schools Tutorial CSS</a>
-                        </li>
-                    </ul>
-                    </li>
-            
-                <li>
-                    <h4>Video Materials</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>Crashcourse CSS Tutorial</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=0afZj1G0BIE&t=600s">Learn CSS in 12 Minutes</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </ul>
-        <ul><h4>Bootstrap 4:</h4>
-            <ul>
-                <li><h4>Reading Materials:</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>A rather jovial history and tutorial for Bootstrap. </label>
-                            <a class="nav-link" href="https://www.taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/">What is Bootstrap and How Do I Use It</a>
-                        </li>
-                    </ul>
-                    </li>
-            
-                <li>
-                    <h4>Video Materials</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>Here is a crashcourse on how to use and apply Bootstrap 4</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=hnCmSXCZEpU">Learn Bootstrap 4</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </ul>
-        <ul><h4>JavaScript:</h4>
-    
-            <ul>
-                <li><h4>Reading Materials:</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>A helpful link to the JavaScript side of W3Schools, with examples and sample code to help you along the way</label>
-                            <a class="nav-link" href="https://www.w3schools.com/js/default.asp">W3Schools Resource</a>
-                        </li>
-                        <li class="nav-item">
-                            <label>Here is a link to a large library of extensive JavaScript examples and plenty of documentation to get you going, whether you're a beginner or a pro</label>
-                            <a class="nav-link" href="https://javascript.info/">JavaScript Code and Documentation Resource</a>
-                        </li>
-                    </ul>
-                    </li>
-            
-                <li>
-                    <h4>Video Materials</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>A crashcourse video for learning JavaScript in an hour</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=W6NZfCO5SIk">JavaScript Crashcourse</a>
-                        </li>
-                        <li class="nav-item">
-                            <label>A 3-hour course on JavaScript</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=PkZNo7MFNFg">JavaScript Course</a>
-                        </li>
-                        <li class="nav-item">
-                            <label>Building a platformer game with JavaScript, if you want extra practice or want a cool portfolio piece</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=w-OKdSHRlfA">Platformer JavaScript Game</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </ul>
-    </ul>
-</div>
-
-<div class="row">
-    <ul>
-    <h2>Servlets:</h2>
-    
-        <ul>
-            <li><h4>Reading Materials:</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>A servlets information page on GeeksforGeeks</label>
-                        <a class="nav-link" href="https://www.geeksforgeeks.org/introduction-java-servlets/">GeeksforGeeks Tutorial</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>A servlets tutorial page with links and tools to get started with servlets</label>
-                        <a class="nav-link" href="https://beginnersbook.com/2013/05/servlet-tutorial/">Servlets Tutorial</a>
-                    </li>
-                </ul>
-                </li>
-        
             <li>
-                <h4>Video Materials</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>A full course on Servlets and JSP for Java developers and beginners</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=OuBUUkQfBYM">Servlets and JSP</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>A playlist teaching Servlets</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=7TOmdDJc14s&list=PLsyeobzWxl7oGCz4k9VyxhfmQpSU1dV9b">YouTube Playlist</a>
-                    </li>
-                </ul>
+                <label>{{titleArticle3}}</label><br>
+                <a href={{link3}}>{{link3}}</a>
             </li>
-        </ul>
-    </ul>
-</div>
 
-<div class="row">
-    <ul>
-    <h2>Angular/TypeScript:</h2>
-    
-        <ul>
-            <li><h4>Reading Materials:</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>Angular IO's tutorial page for Angular, along with installation instructions</label>
-                        <a class="nav-link" href="https://angular.io/tutorial">Angular IO</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>A tutorial using Angular and Bootstrap to create an application</label>
-                        <a class="nav-link" href="https://mdbootstrap.com/education/angular/">Angular App Tutorial</a>
-                    </li>
-                </ul>
-                </li>
-        
             <li>
-                <h4>Video Materials</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>An hour-and-a-half-long crashcourse on Angular</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=Fdf5aTYRW0E">Angular Crashcourse</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>A full course on Angular</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=2OHbjep_WjQ">Angular Course</a>
-                    </li>
-                </ul>
+                <label>{{titleArticle4}}</label><br>
+                <a href={{link4}}>{{link4}}</a>
             </li>
-        </ul>
-    </ul>
-</div>
 
-<div class="row">
-    <ul>
-    <h2>Introduction to Testing:</h2>
-        <ul><h4>Testing</h4>
-            <ul>
-                <li><h4>Reading Materials:</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>A helpful resource from W3Schools on the aspects of testing</label>
-                            <a class="nav-link" href="https://www.w3schools.in/category/software-testing/">W3Schools Testing</a>
-                        </li>
-                        <li class="nav-item">
-                            <label>A good resource for step-by-step tutorials on testing</label>
-                            <a class="nav-link" href="https://www.techbeamers.com/manual-testing-tutorials/">Testing Tutorials</a>
-                        </li>
-                    </ul>
-                    </li>
-            
-                <li>
-                    <h4>Video Materials</h4>
-                    <ul>
-                        <li class="nav-item">
-                            <label>A tutorial on software testing for beginners</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=T3q6QcCQZQg">Beginner Testing</a>
-                        </li>
-                        <li class="nav-item">
-                            <label>A guide for software testing, for beginners</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=goaZTAzsLMk">Testing Guide</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            <li>
+                <label>{{titleArticle5}}</label><br>
+                <a href={{link5}}>{{link5}}</a>
+            </li>
+
+
+
+
         </ul>
-        <ul><h4>Selenium:</h4>
-        
+
+
+    </div>
+    <div class="row">
+        <ul>
+            <h2>Java 8:</h2>
+
             <ul>
                 <li>
                     <h4>Reading Materials:</h4>
                     <ul>
                         <li class="nav-item">
-                            <label>A helpful site that gives you tutorials on selenium testing</label>
-                            <a class="nav-link" href="https://www.softwaretestingmaterial.com/selenium-tutorial/">Selenium Tutorials</a>
+                            <label>W3 Schools offers a variety of tutorials and code samples to help you learn
+                                a multitude of Programming Languages
+                            </label>
+                            <a class="nav-link" href="https://www.w3schools.com/java/">W3 School Tutorials</a>
                         </li>
                         <li class="nav-item">
-                            <label>A Stackify resource for learning selenium</label>
-                            <a class="nav-link" href="https://stackify.com/selenium-tutorial-an-introduction-to-the-basic-features-and-functions-of-selenium/">Stackify Selenium</a>
+                            <label>Here is a great article by techtarget.com which explains OOP.
+                            </label>
+                            <a class="nav-link"
+                                href="https://searchmicroservices.techtarget.com/definition/object-oriented-programming-OOP">What
+                                is OOP?</a>
                         </li>
+
                     </ul>
                 </li>
-            
+
                 <li>
                     <h4>Video Materials</h4>
                     <ul>
                         <li class="nav-item">
-                            <label>An introduction into Selenium automation</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=5FUdrBq-WFo">Selenium Automation</a>
+                            <label>Here is a 9 Hour long video that can be used to
+                                learn crashcourse Java.
+                            </label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=grEKMHGYyns">Learn Java Complete
+                                Video</a>
                         </li>
                         <li class="nav-item">
-                            <label>A course dedicated to selenium for beginners</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=8YktQ-2Do1Q">Selenium Course</a>
+                            <label>Here is a multiple video playlist in order to learn Java and navigate more easily.
+                            </label>
+                            <a class="nav-link"
+                                href="https://www.youtube.com/watch?v=2dZiMBwX_5Q&list=PL_c9BZzLwBRKIMP_xNTJxi9lIgQhE51rF">Learn
+                                Java Playlist</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>This video is specifically used to learn OOP, the main idea in Java Coding. This is a
+                                more basic video
+                                , but its intent is to teach basics for further understanding.
+                            </label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=pTB0EiLXUC8">More Java
+                                Resources</a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </ul>
+    </div>
 
-    </ul>
-</div>
-
-<div class="row">
-    <ul>
-    <h2>DevOps:</h2>
-    
+    <div class="row">
         <ul>
-            <li><h4>Reading Materials:</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>A quick guide to DevOps and the methodology behind it</label>
-                        <a class="nav-link" href="https://medium.com/@centizennationwide/devops-for-beginners-81e820b85f82">DevOps Guide</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>A blog with various resources to get see what DevOps is like</label>
-                        <a class="nav-link" href="https://blog.newrelic.com/engineering/devops-for-beginners/">DevOps Blog</a>
-                    </li>
-                </ul>
-                </li>
-        
-            <li>
-                <h4>Video Materials</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>A 10-hour course on DevOps by Intellipaat</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=JHoy3lDZOfY">Intellipaat Course</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>Here is a tutorial and quick dive into Jenkins build automation</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=LFDrDnKPOTg">Jenkins Tutorial</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </ul>
-</div>
+            <h2>Oracle SQL:</h2>
 
-<div class="row">
-    <ul>
-    <h2>Spring:</h2>
-    
-        <ul>
-            <li><h4>Reading Materials:</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>A helpful guide to Spring and its various projects</label>
-                        <a class="nav-link" href="https://spring.io/projects/spring-framework">Spring Guide</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>A GeeksforGeeks site on Spring, with code examples and documentation</label>
-                        <a class="nav-link" href="https://www.geeksforgeeks.org/introduction-to-spring-framework/">GeeksforGeeks Spring</a>
-                    </li>
-                </ul>
-                </li>
-
-            <li>
-                <h4>Video Materials</h4>
-                <ul>
-                    <li class="nav-item">
-                        <label>A 90-minute course on Spring by Telusko</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=If1Lw4pLLEo">Telusko Spring</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>A 3-hour course on Spring Boot by Telusko</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=35EQXmHKZYs">Telusko Spring Boot</a>
-                    </li>
-                    <li class="nav-item">
-                        <label>A tutorial using Spring Boot and RESTful API</label>
-                        <a class="nav-link" href="https://www.youtube.com/watch?v=DCZOchCX10s">Spring Boot/RESTful API</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </ul>
-</div>
-
-<div class="row">
-        <ul>
-        <h2>Microservices:</h2>
-        
             <ul>
-                <li><h4>Reading Materials:</h4>
+                <li>
+                    <h4>Reading Materials:</h4>
                     <ul>
                         <li class="nav-item">
-                            <label>A Stackify resource on Microservices with code and documentation</label>
-                            <a class="nav-link" href="https://stackify.com/what-are-microservices/">Stackify Microservices</a>
+                            <label>This is the w3school tutorial for SQL in general.</label>
+                            <a class="nav-link" href="https://www.w3schools.com/sql/">W3 School SQL tutorial</a>
                         </li>
                         <li class="nav-item">
-                            <label>A DZone article containing information on Microservices with Java, along with code and documentation</label>
-                            <a class="nav-link" href="https://dzone.com/articles/java-microservices-code-examples-tutorials-and-more">DZone Microservices</a>
+                            <label>Here is Oracle's website page for Oracle SQL along with a learn link.</label>
+                            <a class="nav-link"
+                                href="https://www.oracle.com/database/technologies/appdev/sql.html">Oracle SQL
+                                Website</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>This is a tutorial over SQL concepts taught by Guru99.</label>
+                            <a class="nav-link" href="https://www.guru99.com/introduction-to-database-sql.html">Oracle
+                                SQL Website</a>
                         </li>
                     </ul>
-                    </li>
-            
+                </li>
+
                 <li>
                     <h4>Video Materials</h4>
                     <ul>
                         <li class="nav-item">
-                            <label>A helpful tutorial for Microservices and working with Eureka, Zuul, and Spring Boot</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=rlS9eH5tEnY">Microservices Tutorial</a>
+                            <label>This is the start to a video series designed to help you learn Oracle SQL.</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=QHYuuXPdQNM">Oracle SQL
+                                Tutorial</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>For those seeing SQL for the first time, this is a crachcourse
+                                over what exactly SQL is and what stipulates a database.</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=27axs9dO7AE">Oracle SQL
+                                Tutorial</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            <h2>Front-End Languages:</h2>
+            <ul>
+                <h4>HTML 5</h4>
+
+                <ul>
+                    <li>
+                        <h4>Reading Materials:</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>What is now used is HTML 5, so here is the W3 Tutorial Over this.</label>
+                                <a class="nav-link" href="https://www.w3schools.com/html/default.asp">W3 School HTML
+                                    Tutorial</a>
+                            </li>
+                            <li class="nav-item">
+                                <label>Here is a 'tutorial' which tells the history of HTML and how it is done.</label>
+                                <a class="nav-link" href="https://www.hostinger.com/tutorials/what-is-html">The Basics
+                                    and History of HTML</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h4>Video Materials</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>Here is a youtube playlist which not only gives a tutorial over
+                                    HTML 5, but also explains CSS.
+                                </label>
+                                <a class="nav-link"
+                                    href="https://www.youtube.com/watch?v=YZZIAOOyLi0&list=PL_c9BZzLwBRK0vZL95_BLaednmdHfJOo9">HTML
+                                    and CSS Tutorial Playlist</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+            <ul>
+                <h4>CSS:</h4>
+                <ul>
+                    <li>
+                        <h4>Reading Materials:</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>Here W3 Schools offers an extensive library of CSS features.</label>
+                                <a class="nav-link" href="https://www.w3schools.com/css/css_intro.asp">W3 Schools
+                                    Tutorial CSS</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h4>Video Materials</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>Crashcourse CSS Tutorial</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=0afZj1G0BIE&t=600s">Learn CSS
+                                    in 12 Minutes</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+            <ul>
+                <h4>Bootstrap 4:</h4>
+                <ul>
+                    <li>
+                        <h4>Reading Materials:</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>A rather jovial history and tutorial for Bootstrap. </label>
+                                <a class="nav-link"
+                                    href="https://www.taniarascia.com/what-is-bootstrap-and-how-do-i-use-it/">What is
+                                    Bootstrap and How Do I Use It</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h4>Video Materials</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>Here is a crashcourse on how to use and apply Bootstrap 4</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=hnCmSXCZEpU">Learn Bootstrap
+                                    4</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+            <ul>
+                <h4>JavaScript:</h4>
+
+                <ul>
+                    <li>
+                        <h4>Reading Materials:</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>A helpful link to the JavaScript side of W3Schools, with examples and sample code
+                                    to help you along the way</label>
+                                <a class="nav-link" href="https://www.w3schools.com/js/default.asp">W3Schools
+                                    Resource</a>
+                            </li>
+                            <li class="nav-item">
+                                <label>Here is a link to a large library of extensive JavaScript examples and plenty of
+                                    documentation to get you going, whether you're a beginner or a pro</label>
+                                <a class="nav-link" href="https://javascript.info/">JavaScript Code and Documentation
+                                    Resource</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h4>Video Materials</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>A crashcourse video for learning JavaScript in an hour</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=W6NZfCO5SIk">JavaScript
+                                    Crashcourse</a>
+                            </li>
+                            <li class="nav-item">
+                                <label>A 3-hour course on JavaScript</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=PkZNo7MFNFg">JavaScript
+                                    Course</a>
+                            </li>
+                            <li class="nav-item">
+                                <label>Building a platformer game with JavaScript, if you want extra practice or want a
+                                    cool portfolio piece</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=w-OKdSHRlfA">Platformer
+                                    JavaScript Game</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            <h2>Servlets:</h2>
+
+            <ul>
+                <li>
+                    <h4>Reading Materials:</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>A servlets information page on GeeksforGeeks</label>
+                            <a class="nav-link"
+                                href="https://www.geeksforgeeks.org/introduction-java-servlets/">GeeksforGeeks
+                                Tutorial</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A servlets tutorial page with links and tools to get started with servlets</label>
+                            <a class="nav-link" href="https://beginnersbook.com/2013/05/servlet-tutorial/">Servlets
+                                Tutorial</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h4>Video Materials</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>A full course on Servlets and JSP for Java developers and beginners</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=OuBUUkQfBYM">Servlets and JSP</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A playlist teaching Servlets</label>
+                            <a class="nav-link"
+                                href="https://www.youtube.com/watch?v=7TOmdDJc14s&list=PLsyeobzWxl7oGCz4k9VyxhfmQpSU1dV9b">YouTube
+                                Playlist</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            <h2>Angular/TypeScript:</h2>
+
+            <ul>
+                <li>
+                    <h4>Reading Materials:</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>Angular IO's tutorial page for Angular, along with installation instructions</label>
+                            <a class="nav-link" href="https://angular.io/tutorial">Angular IO</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A tutorial using Angular and Bootstrap to create an application</label>
+                            <a class="nav-link" href="https://mdbootstrap.com/education/angular/">Angular App
+                                Tutorial</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h4>Video Materials</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>An hour-and-a-half-long crashcourse on Angular</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=Fdf5aTYRW0E">Angular
+                                Crashcourse</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A full course on Angular</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=2OHbjep_WjQ">Angular Course</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            <h2>Introduction to Testing:</h2>
+            <ul>
+                <h4>Testing</h4>
+                <ul>
+                    <li>
+                        <h4>Reading Materials:</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>A helpful resource from W3Schools on the aspects of testing</label>
+                                <a class="nav-link" href="https://www.w3schools.in/category/software-testing/">W3Schools
+                                    Testing</a>
+                            </li>
+                            <li class="nav-item">
+                                <label>A good resource for step-by-step tutorials on testing</label>
+                                <a class="nav-link" href="https://www.techbeamers.com/manual-testing-tutorials/">Testing
+                                    Tutorials</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h4>Video Materials</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>A tutorial on software testing for beginners</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=T3q6QcCQZQg">Beginner
+                                    Testing</a>
+                            </li>
+                            <li class="nav-item">
+                                <label>A guide for software testing, for beginners</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=goaZTAzsLMk">Testing Guide</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+            <ul>
+                <h4>Selenium:</h4>
+
+                <ul>
+                    <li>
+                        <h4>Reading Materials:</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>A helpful site that gives you tutorials on selenium testing</label>
+                                <a class="nav-link"
+                                    href="https://www.softwaretestingmaterial.com/selenium-tutorial/">Selenium
+                                    Tutorials</a>
+                            </li>
+                            <li class="nav-item">
+                                <label>A Stackify resource for learning selenium</label>
+                                <a class="nav-link"
+                                    href="https://stackify.com/selenium-tutorial-an-introduction-to-the-basic-features-and-functions-of-selenium/">Stackify
+                                    Selenium</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <h4>Video Materials</h4>
+                        <ul>
+                            <li class="nav-item">
+                                <label>An introduction into Selenium automation</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=5FUdrBq-WFo">Selenium
+                                    Automation</a>
+                            </li>
+                            <li class="nav-item">
+                                <label>A course dedicated to selenium for beginners</label>
+                                <a class="nav-link" href="https://www.youtube.com/watch?v=8YktQ-2Do1Q">Selenium
+                                    Course</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </ul>
+
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            <h2>DevOps:</h2>
+
+            <ul>
+                <li>
+                    <h4>Reading Materials:</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>A quick guide to DevOps and the methodology behind it</label>
+                            <a class="nav-link"
+                                href="https://medium.com/@centizennationwide/devops-for-beginners-81e820b85f82">DevOps
+                                Guide</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A blog with various resources to get see what DevOps is like</label>
+                            <a class="nav-link"
+                                href="https://blog.newrelic.com/engineering/devops-for-beginners/">DevOps Blog</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h4>Video Materials</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>A 10-hour course on DevOps by Intellipaat</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=JHoy3lDZOfY">Intellipaat
+                                Course</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>Here is a tutorial and quick dive into Jenkins build automation</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=LFDrDnKPOTg">Jenkins Tutorial</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            <h2>Spring:</h2>
+
+            <ul>
+                <li>
+                    <h4>Reading Materials:</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>A helpful guide to Spring and its various projects</label>
+                            <a class="nav-link" href="https://spring.io/projects/spring-framework">Spring Guide</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A GeeksforGeeks site on Spring, with code examples and documentation</label>
+                            <a class="nav-link"
+                                href="https://www.geeksforgeeks.org/introduction-to-spring-framework/">GeeksforGeeks
+                                Spring</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h4>Video Materials</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>A 90-minute course on Spring by Telusko</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=If1Lw4pLLEo">Telusko Spring</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A 3-hour course on Spring Boot by Telusko</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=35EQXmHKZYs">Telusko Spring
+                                Boot</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A tutorial using Spring Boot and RESTful API</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=DCZOchCX10s">Spring Boot/RESTful
+                                API</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </ul>
+    </div>
+
+    <div class="row">
+        <ul>
+            <h2>Microservices:</h2>
+
+            <ul>
+                <li>
+                    <h4>Reading Materials:</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>A Stackify resource on Microservices with code and documentation</label>
+                            <a class="nav-link" href="https://stackify.com/what-are-microservices/">Stackify
+                                Microservices</a>
+                        </li>
+                        <li class="nav-item">
+                            <label>A DZone article containing information on Microservices with Java, along with code
+                                and documentation</label>
+                            <a class="nav-link"
+                                href="https://dzone.com/articles/java-microservices-code-examples-tutorials-and-more">DZone
+                                Microservices</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h4>Video Materials</h4>
+                    <ul>
+                        <li class="nav-item">
+                            <label>A helpful tutorial for Microservices and working with Eureka, Zuul, and Spring
+                                Boot</label>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=rlS9eH5tEnY">Microservices
+                                Tutorial</a>
                         </li>
                         <li class="nav-item">
                             <label>A good general resource for understanding the basics of Microservices</label>
-                            <a class="nav-link" href="https://www.youtube.com/watch?v=j1gU2oGFayY">Microservices Basics</a>
+                            <a class="nav-link" href="https://www.youtube.com/watch?v=j1gU2oGFayY">Microservices
+                                Basics</a>
                         </li>
                     </ul>
                 </li>

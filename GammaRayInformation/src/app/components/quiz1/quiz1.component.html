@@ -1,4 +1,24 @@
+<!--
+    Here resides our view for just about any hosted quiz! Each one is
+    associated with a specific button on the quizzes page to each subject. 
+    Here, for instance, is the Java quiz page. In order to get this test 
+    to behave more like a practice test, a couple of specifi things needed
+    to be done. 
+-->
+
+<!--
+    To start things off, one is greeted simply with a button to click when 
+    one is ready to begin the test. Using an event listener, everything is
+    done in the back and the magic begins. In a very simple explanation, 
+    click triggers the 'start' boolean to change from false to true, allowing
+    for the hidden div to appear.
+-->
 <button id="startButton" name="startButton" (click)="takeQuiz()" [hidden]="start">Begin Java 8 Quiz</button>
+<!--
+    Here resides the code for the questions to appear from the database: 
+    questionNumber refers quite obviously to the current question number,
+    question is the question itself, and choices 1-5 represent the choices.
+-->
 <div *ngIf="start">
     <div>
         <h2>Question {{questionNumber}}</h2>
